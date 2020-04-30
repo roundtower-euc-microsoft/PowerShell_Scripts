@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Production",
+    "\\Production\\Active Directory",
+    "\\Production\\Active Directory\\DNS",
+    "\\Production\\Microsoft Exchange",
+    "\\Production\\Office 365",
+    "\\Production\\Office 365\\Exchange Online"
+  ],
+  "SelectedNode": "\\Production\\Office 365\\Exchange Online\\Connect-EXO_Basic.ps1",
+  "PreviewInSolutionExplorer": false
+}

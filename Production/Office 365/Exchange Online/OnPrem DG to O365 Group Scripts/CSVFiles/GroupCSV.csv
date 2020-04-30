@@ -1,0 +1,4 @@
+GroupName,GroupContactAlias,GroupContactExternalEmail,GroupContactOU,LegacyExchangeDN
+Chrob,Chrob,Chrob@aaacooper.mail.onmicrosoft.com,aaacooper.com/AAAGroups/Distribution Groups/Office 365 DG Forwarding Contacts,x500:/o=AAACOOPER/ou=GO/cn=exchangemaillist/cn=Chrob
+Vaptsterms,Vaptsterms,Vaptsterms@aaacooper.mail.onmicrosoft.com,aaacooper.com/AAAGroups/Distribution Groups/Office 365 DG Forwarding Contacts,x500:/o=AAACOOPER/ou=GO/cn=exchangemaillist/cn=Vaptsterms
+BIR,BIR,BIR@aaacooper.mail.onmicrosoft.com,aaacooper.com/AAAGroups/Distribution Groups/Office 365 DG Forwarding Contacts,x500:/o=AAACOOPER/ou=GO/cn=exchangemaillist/cn=BIR
