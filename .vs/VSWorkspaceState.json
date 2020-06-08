@@ -6,8 +6,9 @@
     "\\Production\\Active Directory\\DNS",
     "\\Production\\Microsoft Exchange",
     "\\Production\\Office 365",
-    "\\Production\\Office 365\\Exchange Online"
+    "\\Production\\Office 365\\Exchange Online",
+    "\\Production\\Office 365\\Exchange Online\\OnPrem DG to O365 Group Scripts"
   ],
-  "SelectedNode": "\\Production\\Office 365\\Exchange Online\\Connect-EXO_Basic.ps1",
+  "SelectedNode": "\\Production\\Office 365\\Exchange Online\\OnPrem DG to O365 Group Scripts\\Group_Cutover_Part1.ps1",
   "PreviewInSolutionExplorer": false
 }
