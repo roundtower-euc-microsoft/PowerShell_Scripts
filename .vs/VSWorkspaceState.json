@@ -3,12 +3,15 @@
     "",
     "\\Production",
     "\\Production\\Active Directory",
-    "\\Production\\Active Directory\\DNS",
+    "\\Production\\Active Directory\\Admin Tasks",
+    "\\Production\\Active Directory\\Health Check & Info Gather",
+    "\\Production\\Microsoft 365",
+    "\\Production\\Microsoft 365\\Exchange Online",
+    "\\Production\\Microsoft 365\\Exchange Online\\Info Gather",
+    "\\Production\\Microsoft 365\\Readiness Assessment",
     "\\Production\\Microsoft Exchange",
-    "\\Production\\Office 365",
-    "\\Production\\Office 365\\Exchange Online",
-    "\\Production\\Office 365\\Exchange Online\\OnPrem DG to O365 Group Scripts"
+    "\\Production\\Microsoft Exchange\\Health & Info Gathering"
   ],
-  "SelectedNode": "\\Production\\Office 365\\Exchange Online\\OnPrem DG to O365 Group Scripts\\Group_Cutover_Part1.ps1",
+  "SelectedNode": "\\Production\\Active Directory\\Health Check & Info Gather\\ADHealthCheck.ps1",
   "PreviewInSolutionExplorer": false
 }
