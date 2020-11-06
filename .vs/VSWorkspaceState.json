@@ -3,7 +3,6 @@
     "",
     "\\Production",
     "\\Production\\Active Directory",
-    "\\Production\\Active Directory\\Admin Tasks",
     "\\Production\\Active Directory\\Health Check & Info Gather",
     "\\Production\\Microsoft 365",
     "\\Production\\Microsoft 365\\Exchange Online",
@@ -12,6 +11,6 @@
     "\\Production\\Microsoft Exchange",
     "\\Production\\Microsoft Exchange\\Health & Info Gathering"
   ],
-  "SelectedNode": "\\Production\\Active Directory\\Health Check & Info Gather\\ADHealthCheck.ps1",
+  "SelectedNode": "\\Production\\Active Directory\\Health Check & Info Gather\\ADInfoGather.ps1",
   "PreviewInSolutionExplorer": false
 }

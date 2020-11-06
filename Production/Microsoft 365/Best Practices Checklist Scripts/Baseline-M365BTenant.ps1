@@ -1,110 +1,21 @@
-##############################################################
-##############################################################
-#                                                            #
-#                                                            #
-#              AD Information Gathering Script               #
-#                                                            #
-#                                                            #
-##############################################################
-##############################################################
-#                                                            #
-#                   ****INFORMATION****                      #
-#                                                            #
-#       This script will gather information about the        #
-#      Active Directory environment that you are currently   #
-#       in and will output the Forest Name, Domain Name,     #
-#      current number of OU's, current number of users,      #
-#       current number of groups, and a list of other        #
-#         informational items.                               #
-#                                                            #
-##############################################################
-#
-#
-#
-#
-#      ***** PRERQUISITE - CHECKING OUTPUT PATH *****
-$ExportPath = "C:\temp\AD_Info_Gather_Docs"
-If(!(test-path $ExportPath))
-{
-      New-Item -ItemType Directory -Force -Path $ExportPath
-}
-
- 
-
-#  ***** PART ONE - GENERIC AD INFORMATION WITH COUNTS *****
-
- 
-
-Import-Module ActiveDirectory
-
- 
-
- 
-
-$ForestFunction = (Get-ADForest).ForestMode
-$DomainFunction = (Get-ADDomain).DomainMode
-$SchemaVersion = Get-ADObject (Get-ADRootDSE).schemaNamingContext -Propert objectVersion | Select objectVersion
-$FSMOInfra = Get-ADDomain | Select-Object InfrastructureMaster
-$FSMOPDC = Get-ADDomain | Select-Object PDCEmulator
-$FSMORID = Get-ADDomain | Select-Object RIDMaster
-$FSMODOM = Get-ADForest | Select-Object DomainNamingMaster
-$FSMOSchema = Get-ADForest | Select-Object SchemaMaster
-$ADUserCount = (get-aduser -filter *).count
-$ADComputerCount = (get-adcomputer -filter *).count
-$ADTotalGroupCount = (get-adgroup -filter *).count
-$ADSecGroupCount = (get-adgroup -filter 'GroupCategory -eq "security"').count
-$ADDistGroupCount = (get-adgroup -filter 'GroupCategory -eq "distribution"').count
-$ADDisableUserCount = (get-aduser -filter * | where {$_.enabled -ne "False"}).count
-$ADDisabledComputerCount = (get-adcomputer -Filter * | where {$_.enabled -ne "False"}).count
-$ADPrinterCount = (Get-AdObject -filter "objectCategory -eq 'printqueue'").count
-$ADContactCount = (Get-ADObject -ldapFilter "(objectclass=contact)").count
-$ADOUCount = (Get-ADOrganizationalUnit -Filter *).count
-
- 
-
-$Report1 = @(
-    [pscustomobject]@{
-
- 
-
-        ForestFunctionalLevel = $ForestFunction
-        DomainFunctionallLevel = $DomainFunction
-        SchemaVersion = $SchemaVersion
-        FSMOInfrastructure = $FSMOInfra
-        FSMOPDCEmulator = $FSMOPDC
-        FSMORIDMaster = $FSMORID
-        FSMODomainNamingMaster = $FSMODOM
-        FSMOSchemaMaster = $FSMOSchema
-        UserCount = $ADUserCount
-        ComputerCount = $ADComputerCount
-        DisabledUseCount = $ADDisableUserCount
-        DisabledComputerAccount = $ADDisabledComputerCount
-        TotalGroupCount = $ADTotalGroupCount
-        SecurityGroupCount = $ADSecGroupCount
-        DistributionGroupCount = $ADDistGroupCount
-        PrinterCount = $ADPrinterCount
-        ContactCount = $ADContactCount
-        OUCount = $ADOUCount
-
- 
-
-        }
-    )
-$Report1 | Export-csv -Path $ExportPath\AD_Generic-Count_Info.csv -NoTypeInformation
 <##################################################################################################
 #
 .SYNOPSIS
-Run this script instead of Baseline-ExchangeOnline.ps1 or Baseline-M365BTenant.ps1 for further customization of your subscription
+This script configures a new Microsoft 365 Business tenant including:
+- Baseline Exchange Online settings and EOP policies
+- Baseline Office 365 ATP policies
+
+See Advanced-TenantConfig.ps1 for other customizations  
 
 Connect to Exchange Online via PowerShell using MFA:
 https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell?view=exchange-ps
 
 .NOTES
-    FileName:    Advanced-TenantConfig.ps1
-    Author:      Alex Fields, ITProMentor.com
-    Created:     March 2020
-	Revised:     August 2020
-    Version:     1.1
+    FileName:    Baseline-M365BTenant.ps1
+    Author:      Corey St. Pierre, Sr. Microsoft SYstems Engineer
+    Created:     May 2020
+	Revised:     October 2020
+    Version:     3.1
     
 #>
 ###################################################################################################
@@ -116,10 +27,8 @@ $AssessmentColor = "Yellow"
 ###################################################################################################
 
 
-
 #################################################
 ## ENABLE UNIFIED AUDIT LOG SEARCH
-## ANY SUBSCRIPTION
 #################################################
 $AuditLogConfig = Get-AdminAuditLogConfig
 if ($AuditLogConfig.UnifiedAuditLogIngestionEnabled) {
@@ -129,56 +38,23 @@ if ($AuditLogConfig.UnifiedAuditLogIngestionEnabled) {
     Write-Host 
     Write-Host -ForegroundColor $AssessmentColor "Unified Audit Log is not enabled"
     Write-Host 
-    $Answer = Read-Host "Do you want to enable the Unified Audit Log now? Type Y or N and press Enter to continue"
+    $Answer = Read-Host "Do you want to enable mailbox auditing to the Unified Audit Log now? Type Y or N and press Enter to continue"
     if ($Answer -eq 'y' -or $Answer -eq 'yes') {
         Set-AdminAuditLogConfig -UnifiedAuditLogIngestionEnabled $true
+        Get-Mailbox -ResultSize Unlimited | Set-Mailbox -AuditEnabled $true
         Write-Host 
-        Write-Host -ForegroundColor $MessageColor "Unified Audit Log Search is now enabled" 
+        Write-Host -ForegroundColor $MessageColor "Unified Audit Log Search is now enabled with mailbox auditing enabled" 
     } else {
         Write-Host 
         Write-Host -ForegroundColor $AssessmentColor "Unified Audit Log will not be enabled"
     }
  }
 
+
+
  
-
-#################################################
-## EDIT THE PER-MAILBOX AUDIT LOG AGE LIMIT 
-## E5 or E5 Compliance SKU
-#################################################
-Write-Host 
-$CurrentAge = (get-mailbox -resultsize unlimited).auditlogagelimit
-Write-Host -ForegroundColor $AssessmentColor "Current audit log age limit (age and number of mailboxes):"
-$CurrentAge | group | select name, count | ft
-$Answer = Read-Host "Do you want to set the audit log age limit and enable all auditing actions on all mailboxes? Type Y or N and press Enter to continue"
-if ($Answer -eq 'y' -or $Answer -eq 'yes') {
-        Write-Host 
-        $AuditLogAgeLimit = Read-Host "Enter the new audit log age limit in days; recommended value 365 or greater (or press Enter to continue without making changes)"
-        if ($AuditLogAgeLimit -eq $null -or $AuditLogAgeLimit -eq "" -or $AuditLogAgeLimit -eq 'n' -or $AuditLogAgeLimit -eq 'no'){
-            Write-Host
-            Write-Host -ForegroundColor $AssessmentColor "The audit log age limit and audit actions will not be modified"
-        } else {
-            Get-Mailbox -ResultSize Unlimited | Set-Mailbox -AuditEnabled $true -AuditLogAgeLimit $AuditLogAgeLimit
-            Write-Host 
-            Write-Host -ForegroundColor $MessageColor "The new audit log age limit has been set for all mailboxes"
-            ## Enable all mailbox auditing actions
-            Get-Mailbox -ResultSize Unlimited | Set-Mailbox -AuditAdmin @{Add="Copy","Create","FolderBind","HardDelete","Move","MoveToDeletedItems","SendAs","SendOnBehalf","SoftDelete","Update","UpdateFolderPermissions","UpdateInboxRules","UpdateCalendarDelegation"}
-            Get-Mailbox -ResultSize Unlimited | Set-Mailbox –AuditDelegate @{Add="Create","FolderBind","HardDelete","Move","MoveToDeletedItems","SendAs","SendOnBehalf","SoftDelete","Update","UpdateFolderPermissions","UpdateInboxRules"}
-            Get-Mailbox -ResultSize Unlimited | Set-Mailbox –AuditOwner @{Add="Create","HardDelete","Move","Mailboxlogin","MoveToDeletedItems","SoftDelete","Update","UpdateFolderPermissions","UpdateInboxRules","UpdateCalendarDelegation"}
-            Write-Host 
-            Write-host -ForegroundColor $MessageColor "All auditing actions are now enabled on all mailboxes"
-            } 
-
-} else {
-        Write-Host
-        Write-Host -ForegroundColor $AssessmentColor "The audit log age limit and audit actions will not be modified"
-        }
-
-
-
 #################################################
 ## CHECK TO ENSURE MODERN AUTH IS ENABLED
-## ANY SUBSCRIPTION
 #################################################
 $OrgConfig = Get-OrganizationConfig 
  if ($OrgConfig.OAuth2ClientProfileEnabled) {
@@ -196,45 +72,7 @@ $OrgConfig = Get-OrganizationConfig
 
 
 #################################################
-## BLOCK SMTP AUTHENTICATION
-## ANY SUBSCRIPTION
-#################################################
-
-Write-Host 
-$Answer = Read-Host "Do you want to disable SMTP client authentication on all mailboxes? Type Y or N and press Enter to continue"
-if ($Answer -eq 'y'-or $Answer -eq 'yes') {
-    Get-Mailbox -ResultSize Unlimited |Set-CASMailbox -SmtpClientAuthenticationDisabled $true
-    Write-Host 
-    Write-Host -ForegroundColor $MessageColor "SMTP client authentication has been disabled for all existing mailboxes"
-} Else {
-    Write Host 
-    Write-Host -ForegroundColor $AssessmentColor "SMTP client authentication status has not been changed for any mailboxes"
-}
-
-
-#################################################
-## BLOCK POP & IMAP
-## ANY SUBSCRIPTION
-#################################################
-Write-Host 
-$Answer = Read-Host "Do you want to disable POP and IMAP on all mailboxes? Type Y or N and press Enter to continue"
-if ($Answer -eq 'y'-or $Answer -eq 'yes') {
-    Get-CASMailbox -ResultSize Unlimited -Filter {ImapEnabled -eq $True} | Set-CASMailbox -ImapEnabled $False 
-    Get-CASMailbox -ResultSize Unlimited -Filter {PopEnabled -eq $True} | Set-CASMailbox -PopEnabled $False 
-    Get-CASMailboxPlan -Filter {ImapEnabled -eq $True}| Set-CASMailboxPlan -ImapEnabled $False
-    Get-CASMailboxPlan -Filter {PopEnabled -eq $True}| Set-CASMailboxPlan -PopEnabled $False
-    Write-Host 
-    Write-Host -ForegroundColor $MessageColor "POP and IMAP have been disabled for all existing mailboxes and all future mailboxes"
-} Else {
-    Write Host 
-    Write-Host -ForegroundColor $AssessmentColor "POP and IMAP settings have not been changed"
-}
-
-
-
-#################################################
 ## BLOCK BASIC AUTH
-## ANY SUBSCRIPTION
 #################################################
 if ($OrgConfig.DefaultAuthenticationPolicy -eq $null -or $OrgConfig.DefaultAuthenticationPolicy -eq "") {
         Write-Host 
@@ -305,10 +143,9 @@ if ($OrgConfig.DefaultAuthenticationPolicy -eq $null -or $OrgConfig.DefaultAuthe
 ## Set-User -Identity $ExceptionUser -AuthenticationPolicy "Allow Basic Auth Exceptions"
 
 
-
+     
 #################################################
 ## DISABLE AUTOMATIC FORWARDING 
-## ANY SUBSCRIPTION
 #################################################
 $RemoteDomainDefault = Get-RemoteDomain Default 
 if ($RemoteDomainDefault.AutoForwardEnabled) {
@@ -319,6 +156,8 @@ if ($RemoteDomainDefault.AutoForwardEnabled) {
     if ($Answer -eq 'y' -or $Answer -eq 'yes') {
         ## DENY AUTOFORWARD ON THE DEFAULT REMOTE DOMAIN (*) 
         Set-RemoteDomain Default -AutoForwardEnabled $false
+
+   <# This section is optional     
         ## ALSO DENY AUTO-FORWARDING FROM MAILBOX RULES VIA TRANSPORT RULE WITH REJECTION MESSAGE
         $TransportRuleName = "External Forward Block"
         $rejectMessageText = "Mail forwarding to external domains is not permitted. If you have questions, please contact support."
@@ -327,6 +166,7 @@ if ($RemoteDomainDefault.AutoForwardEnabled) {
         Write-Output "External Forward Block rule not found, creating rule..."
         New-TransportRule -name $TransportRuleName -Priority 1 -SentToScope NotInOrganization -MessageTypeMatches AutoForward -RejectMessageEnhancedStatusCode 5.7.1 -RejectMessageReasonText $rejectMessageText
         } else {Write-Output "External forward block rule already exists."} 
+    #>
         Write-Host 
         Write-Host -ForegroundColor $MessageColor "Auto-forwarding to remote domains is now disabled"        
         } else {
@@ -334,6 +174,7 @@ if ($RemoteDomainDefault.AutoForwardEnabled) {
         Write-Host -ForegroundColor $AssessmentColor "Auto-forwarding to remote domains will not be disabled"
         }
   
+  <# This section is optional 
     ## EXPORT LIST OF FORWARDERS TO CSV
     Write-Host    
     $Answer2 = Read-Host "Do you want to export to CSV a list of mailboxes that might be impacted by disabling auto-forward to remote domains? Type Y or N and press Enter to continue"
@@ -349,13 +190,14 @@ if ($RemoteDomainDefault.AutoForwardEnabled) {
         } else {
         Write-Host 
         Write-Host  -ForegroundColor $MessageColor "Run the script again if you wish to export auto-forwarding mailboxes and inbox rules"
-        }
+        } 
+  #>
+
 } else {
     Write-Host 
     Write-Host -ForegroundColor $MessageColor "Auto-forwarding to remote domains is already disabled"
  }
  
-
 #################################################
 ## SET RETAIN DELETED ITEMS TO 30 DAYS
 ## ANY SUBSCRIPTION
@@ -378,222 +220,7 @@ if ($Answer -eq 'y' -or $Answer -eq 'yes') {
 
 
 #################################################
-## PREVENT CONSUMER STORAGE LOCATIONS
-## ANY SUBSCRIPTION
-#################################################
-Write-Host
-$OwaPolicy = Get-OwaMailboxPolicy -Identity OwaMailboxPolicy-Default
-if ($OwaPolicy.AdditionalStorageProvidersAvailable) {
-    Write-Host 
-    Write-Host -ForegroundColor $AssessmentColor "Outside storage locations like GoogleDrive and consumer OneDrive are currently enabled"
-    Write-Host 
-    $Answer = Read-Host "Do you want to disable outside storage locations like GoogleDrive or consumer OneDrive? Type Y or N and press Enter to continue"
-    if ($Answer -eq 'y'-or $Answer -eq 'yes') {
-        Get-OwaMailboxPolicy | Set-OwaMailboxPolicy -AdditionalStorageProvidersAvailable $False
-        Write-Host 
-        Write-Host -ForegroundColor $MessageColor "Outside storage locations like GoogleDrive and consumer OneDrive are now disabled"
-    } Else {
-        Write-Host
-        Write-Host -ForegroundColor $AssessmentColor "Outside storage locations like GoogleDrive and consumer OneDrive have not been disabled"
-        }
-} Else {
-Write-Host
-Write-Host -ForegroundColor $MessageColor "Outside storage locations like GoogleDrive and consumer OneDrive are already disabled"
-}
-
-
-
-#################################################
-## ENABLE ENCRYPT IN OWA 
-## SUBSCRIPTIONS: O365E3/E5, M365B/E3/E5, EM+SE3/E5
-#################################################
-
-$IRMConfig = Get-IRMConfiguration
-if (!$IRMConfig.SimplifiedClientAccessEnabled) {
-    Write-Host 
-    Write-Host -ForegroundColor $AssessmentColor "The 'Encrypt' option is not available in OWA"
-    Write-Host 
-    $Answer = Read-Host "Enable the 'Encrypt' option in Outlook Web Access now? Type Y or N and press Enter to continue"
-    if ($Answer -eq 'y' -or $Answer -eq 'yes') {
-        Set-IRMConfiguration -SimplifiedClientAccessEnabled $true
-        Write-Host 
-        Write-Host -ForegroundColor $MessageColor "The 'Encrypt' option for Outlook on the web has been enabled"
-        } else {
-        Write-Host 
-        Write-Host -ForegroundColor $AssessmentColor "The 'Encrypt' option for Outlook on the Web will not be enabled"
-        }
-    } else {
-    Write-Host
-    Write-Host -ForegroundColor $MessageColor "The 'Encrypt' option for Outlook on the web is already enabled"
-}
-
-
-#################################################
-## ENCRYPT PDF ATTACHMENTS 
-## SUBSCRIPTIONS: O365E3/E5, M365B/E3/E5, EM+SE3/E5
-#################################################
-if (!$IRMConfig.EnablePdfEncryption) {
-    Write-Host 
-    Write-Host -ForegroundColor $AssessmentColor "PDF attachments are not encrypted by OME"
-    Write-Host 
-    $Answer = Read-Host "Do you want to enable encryption of PDF attachments in OME protected messages? Type Y or N and press Enter to continue"
-    if ($Answer -eq 'y' -or $Answer -eq 'yes') {
-        Set-IRMConfiguration -EnablePdfEncryption $true
-        Write-Host 
-        Write-Host -ForegroundColor $MessageColor "PDF attachments will now be encrypted by OME"
-        } else {
-        Write-Host 
-        Write-Host -ForegroundColor $AssessmentColor "PDF attachments will not be encrypted by OME"
-        }
-    } else {
-    Write-Host
-    Write-Host -ForegroundColor $MessageColor "PDF attachments are already being encrypted by OME"
-}
-
-
-#################################################
-## AUTO-DECRYPT ENCRYPTED ATTACHMENTS 
-## SUBSCRIPTIONS: O365E3/E5, M365B/E3/E5, EM+SE3/E5
-#################################################
-Write-Host
-if (!$IRMConfig.DecryptAttachmentForEncryptOnly) {
-    Write-Host 
-    Write-Host -ForegroundColor $AssessmentColor "Attachments are encrypted by default upon download"
-    Write-Host 
-    $Answer = Read-Host "Do you want to enable attachments to be decrypted on download? Type Y or N and press Enter to continue"
-    if ($Answer -eq 'y' -or $Answer -eq 'yes') {
-        Set-IRMConfiguration -DecryptAttachmentForEncryptOnly $true
-        Write-Host 
-        Write-Host -ForegroundColor $MessageColor "Attachments will now be automatically decrypted on download"
-        } else {
-        Write-Host 
-        Write-Host -ForegroundColor $AssessmentColor "Attachments will remain encrypted on download"
-        }
-    } else {
-    Write-Host
-    Write-Host -ForegroundColor $MessageColor "Attachments are automatically decrypted on download"
-}
-
-
-#################################################
-## JOURNAL REPORT DECRYPTION
-## SUBSCRIPTIONS: O365E3/E5, M365B/E3/E5, EM+SE3/E5
-#################################################
-Write-Host
-if (!$IRMConfig.JournalReportDecryptionEnabled) {
-    Write-Host 
-    Write-Host -ForegroundColor $AssessmentColor "Journal reports of OME protected messages are currently not decrypted"
-    Write-Host 
-    $Answer = Read-Host "Do you want to enable decrypted journal reports for OME protected messages? Type Y or N and press Enter to continue"
-    if ($Answer -eq 'y' -or $Answer -eq 'yes') {
-        Set-IRMConfiguration -JournalReportDecryptionEnabled $true
-        Write-Host 
-        Write-Host -ForegroundColor $MessageColor "Journal reports will now be decrypted"
-        } else {
-        Write-Host 
-        Write-Host -ForegroundColor $AssessmentColor "Journal reports will remain encrypted"
-        }
-    } else {
-    Write-Host
-    Write-Host -ForegroundColor $MessageColor "Journal reports of OME messages are already being decrypted, no changes have been made"
-}
-
-
-
-
-#################################################
-## CONDITIONAL ACCESS - LIMITED WEB ACCESS
-## SUBSCRIPTIONS: EM+S E3/E5 or M365B/E3/E5
-#################################################
-
-$OwaPolicy = Get-OwaMailboxPolicy -Identity OwaMailboxPolicy-Default
-if ($OwaPolicy.ConditionalAccessPolicy -eq 'Off') {
-    Write-Host 
-    Write-Host -ForegroundColor $AssessmentColor "Attachment download is currently enabled for unmanaged devices by the default OWA policy"
-    Write-Host 
-    $Answer = Read-Host "Do you want to disable attachment download on unmanaged devices? Type Y or N and press Enter to continue"
-    if ($Answer -eq 'y'-or $Answer -eq 'yes') {
-        Get-OwaMailboxPolicy | Set-OwaMailboxPolicy -ConditionalAccessPolicy ReadOnly
-        Write-Host 
-        Write-Host -ForegroundColor $MessageColor "Attachment download on unmanaged devices is now disabled; please be sure to create a corresponding Conditional Access policy in Azure AD"
-    } Else {
-        Write-Host
-        Write-Host -ForegroundColor $AssessmentColor "Attachment download on unamanged devices has not been disabled"
-        }
-} Else {
-Write-Host
-Write-Host -ForegroundColor $MessageColor "Attachment download on unmanaged devices is already disabled; please be sure there is a corresponding Conditional Access policy present in Azure AD"
-}
-
-
-## NOTE: You must implement this policy in conjunction with a corresponding Conditional Access policy in Azure AD
-## To create the policy from Azure AD > Security > Conditional Access:
-## Name the policy "Block web downloads on unmanaged devices"
-## Target the appropriate user groups (or All users)
-## Target Exchange Online
-## Use the Session Control called "Enforce app restricitons"
-## Save and enable the policy
-
-
-
-#################################################
-## ARCHIVE AND LEGAL HOLD
-## SUBSCRIPTIONS: O365E3/E5, M365B/E3/E5
-#################################################
-
-
-## Use the following to modify the Default move to archive retention policy; example shown is for 3 years instead of 2 years
-## Set-RetentionPolicyTag "Default 2 year move to archive" -Name "Default 3 year move to archive" -AgeLimitForRetention 1095
-
-
-Write-Host
-$Answer = Read-Host "Do you want to configure Archiving and Litigation Hold features? type Y or N and press Enter to Continue"
-if($Answer -eq 'y' -or $Answer -eq 'yes') {
-
-    ## Check whether the auto-expanding archive feature is enabled, and if not, enable it
-    $OrgConfig = Get-OrganizationConfig 
-     if ($OrgConfig.AutoExpandingArchiveEnabled) {
-        Write-Host 
-        Write-Host -ForegroundColor $MessageColor "The Auto Expanding Archive feature is already enabled"
-     } else {
-        Set-OrganizationConfig -AutoExpandingArchive
-        Write-Host 
-        Write-Host -ForegroundColor $MessageColor "The Auto Expanding Archive feature is now enabled"
-     }
-
-    ## Prompt whether or not to enable the Archive mailbox for all users
-    Write-Host 
-    $ArchiveAnswer = Read-Host "Do you want to enable the Archive mailbox for all user mailboxes? NOTE: Works against cloud-only accounts; does not work against AD synchronized accounts. Type Y or N and press Enter to continue"
-    if ($ArchiveAnswer -eq 'y'-or $ArchiveAnswer -eq 'yes') {
-        Get-Mailbox -ResultSize Unlimited -Filter {ArchiveStatus -Eq "None" -AND RecipientTypeDetails -eq "UserMailbox"} | Enable-Mailbox -Archive
-        Write-Host 
-        Write-Host -ForegroundColor $MessageColor "The Archive mailbox has been enabled for all user mailboxes"
-    } Else {
-        Write-Host 
-        Write-Host -ForegroundColor $AssessmentColor "The Archive mailbox will not be enabled for all user mailboxes"
-    }
-
-     ## Prompt whether or not to enable Litigation Hold for all mailboxes
-    Write-Host 
-    $LegalHoldAnswer = Read-Host "Do you want to enable Litigation Hold indefinitely for all mailboxes? Type Y or N and press Enter to continue"
-    if ($LegalHoldAnswer -eq 'y' -or $LegalHoldAnswer -eq 'yes') {
-        Get-Mailbox -ResultSize Unlimited -Filter {LitigationHoldEnabled -Eq "False" -AND RecipientTypeDetails -ne "DiscoveryMailbox"} | Set-Mailbox -LitigationHoldEnabled $True
-        Write-Host 
-        Write-Host -ForegroundColor $MessageColor "Litigation Hold has been enabled for all mailboxes"
-    } Else {
-        Write-Host 
-        Write-Host -ForegroundColor $AssessmentColor "Litigation Hold will not be enabled for all mailboxes"
-}
-
-} Else {
-Write-Host
-Write-Host -ForegroundColor $AssessmentColor "Archiving and Litigation Hold will not be configured"
-}
-
-
-#################################################
 ## RESET THE DEFAULT ANTISPAM SETTINGS
-## ANY SUBSCRIPTION
 #################################################
 Write-Host 
 $Answer = Read-Host "Do you want to reset the default spam filter policy with the recommended baseline settings? Type Y or N and press Enter to continue"
@@ -650,7 +277,6 @@ if ($Answer -eq 'y' -or $Answer -eq 'yes') {
 
 #################################################
 ## RESET OUTBOUND SPAM FILTER
-## ANY SUBSCRIPTION
 #################################################
 Write-Host 
 $Answer = Read-Host "Do you want to reset the outbound spam filter policy with the recommended baseline settings? Type Y or N and press Enter to continue"
@@ -691,7 +317,6 @@ if ($Answer -eq 'y' -or $Answer -eq 'yes') {
 
 #################################################
 ## RESET DEFAULT ANTIMALWARE SETTINGS
-## ANY SUBSCRIPTION
 #################################################
 Write-Host 
 
@@ -700,7 +325,7 @@ Write-Host
 $Answer = Read-Host "Do you want to reset the default malware filter policy with the recommended baseline settings? Type Y or N and press Enter to continue"
 if ($Answer -eq 'y' -or $Answer -eq 'yes') {
     Write-Host 
-    #$AlertAddress= Read-Host "Enter the email address where you would like to recieve alerts about malware"
+    ## $AlertAddress= Read-Host "Enter the email address where you would like to recieve alerts about malware"
     ## Modify the default malware filter policy
     $MalwarePolicyParam = @{
         'Action' =  'DeleteMessage';
@@ -732,11 +357,8 @@ if ($Answer -eq 'y' -or $Answer -eq 'yes') {
     }
 
 
-
-
 #################################################
 ## CONFIGURE OFFICE 365 ATP SETTINGS
-## SUBSCRIPTIONS: O365E5, M365B/E5 or O365ATP P1/P2
 #################################################
 Write-Host
 $Answer = Read-Host "Do you want to configure Office 365 ATP with the recommended baseline settings? Type Y or N and press Enter to continue"
@@ -898,3 +520,6 @@ write-host -foregroundcolor green "Office 365 ATP baseline configuration has com
 
 ###################################################################################################
 ## THIS CONCLUDES THE SCRIPT
+
+
+
