@@ -1,0 +1,506 @@
+RecipientTypeDetails,PrimarySmtpAddress,SMTPALIAS
+UserMailbox,5ar.ic@AMERICOLD.COM,SMTP:5aric@HALLSCORP.com
+UserMailbox,5ar.ic@AMERICOLD.COM,smtp:5IC@HALLSCORP.com
+UserMailbox,5ar.ic@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=4055b36a4bd44ee884dd70c0ed0f942e-5AR I
+UserMailbox,5ar.sr@AMERICOLD.COM,SMTP:5arsr@HALLSCORP.com
+UserMailbox,5ar.sr@AMERICOLD.COM,smtp:5SR@HALLSCORP.com
+UserMailbox,5ar.sr@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=d074a2ecd2004208936f18a34fb360da-5AR S
+UserMailbox,5ar.temp@AMERICOLD.COM,SMTP:5artemp@HALLSCORP.com
+UserMailbox,5ar.temp@AMERICOLD.COM,smtp:5Temp@HALLSCORP.com
+UserMailbox,5ar.temp@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=7e7cfb8194df41779aac7c79b709e842-5AR T
+UserMailbox,601.ic@AMERICOLD.COM,SMTP:601ic@HALLSCORP.com
+UserMailbox,601.ic@AMERICOLD.COM,smtp:6IC@HALLSCORP.com
+UserMailbox,601.ic@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=f5cda4732e04418a9a0232d5119cbcbe-601 I
+UserMailbox,alejandra.baron@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=f7e41b4c20cc401b9eff62f400529fb0-Aleja
+UserMailbox,alejandra.baron@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=5338f4e4404e4a98aa78fb922a1ce1f5
+UserMailbox,alejandra.baron@AMERICOLD.COM,SMTP:abaron@HALLSCORP.com
+UserMailbox,alfonso.soler@AMERICOLD.COM,SMTP:asoler@HALLSCORP.com
+UserMailbox,alfonso.soler@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=b8f59470f16d4385a44431d67fb3f3ac-Alpho
+UserMailbox,alison.clemente@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=c8eac60fac384ad99626a237d3191e90
+UserMailbox,alison.clemente@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=aclemente
+UserMailbox,alison.clemente@AMERICOLD.COM,SMTP:aclemente@HALLSCORP.com
+UserMailbox,andrew.harding@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=ccea08d4763f46b3a9ad2bc22f391575
+UserMailbox,andrew.harding@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=aharding
+UserMailbox,andrew.harding@AMERICOLD.COM,SMTP:aharding@HALLSCORP.com
+UserMailbox,angelo.castillo@AMERICOLD.COM,SMTP:acastillo@HALLSCORP.com
+UserMailbox,angelo.castillo@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=f504997f5f974804b8b3fbee7bc2ad1e-Angel
+UserMailbox,arthur.sabino@AMERICOLD.COM,SMTP:asabino@HALLSCORP.com
+UserMailbox,arthur.sabino@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=5c7082f4040241fa87aef74a226b5ad2-Arthu
+UserMailbox,asma.yousaf@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=e9129adb451b45d587e16541f0606740
+UserMailbox,asma.yousaf@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=ayousaf
+UserMailbox,asma.yousaf@AMERICOLD.COM,SMTP:ayousaf@HALLSCORP.com
+UserMailbox,barbara.burt@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=2d3a9f6e636c4d35a4de2d08e4d63b26
+UserMailbox,barbara.burt@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=eac5f902c1514cfaa6daa180ac9c97e2-Barba
+UserMailbox,barbara.burt@AMERICOLD.COM,SMTP:bburt@HALLSCORP.com
+UserMailbox,bernard.caleon@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=69f9695b01f34387b54cc35ab7399cb7-Berna
+UserMailbox,bernard.caleon@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=950ef460e0804a9a9cf6fe258942c62b
+UserMailbox,bernard.caleon@AMERICOLD.COM,SMTP:bcaleon@HALLSCORP.com
+UserMailbox,bien.caleon@AMERICOLD.COM,SMTP:bienc@HALLSCORP.com
+UserMailbox,bien.caleon@AMERICOLD.COM,smtp:BCaleon2@HALLSCORP.com
+UserMailbox,bien.caleon@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=d7d03ef6506c4af88bcab7faa3bf5a01-Bien
+UserMailbox,halls.billing@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=cef76d255244449fa103c0bbe273663b
+UserMailbox,halls.billing@AMERICOLD.COM,smtp:B@HALLSCORP.com
+UserMailbox,halls.billing@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=93cfd6f6a4564248a0aab956cb282f4a-Billi
+UserMailbox,halls.billing@AMERICOLD.COM,SMTP:billing@HALLSCORP.com
+UserMailbox,brian.welsh@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=56121ee6fea74a9fa328bafe932b5284
+UserMailbox,brian.welsh@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=bwelsh
+UserMailbox,brian.welsh@AMERICOLD.COM,SMTP:bwelsh@HALLSCORP.com
+UserMailbox,bwwarehouse@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=5e7d471510604221b3724e9e70efdb85
+UserMailbox,bwwarehouse@AMERICOLD.COM,smtp:BWarehouse@HALLSCORP.com
+UserMailbox,bwwarehouse@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=bwwarehouse
+UserMailbox,bwwarehouse@AMERICOLD.COM,SMTP:bwwarehouse@HALLSCORP.com
+UserMailbox,brittney.vogt@AMERICOLD.COM,SMTP:blvogt@HALLSCORP.com
+UserMailbox,brittney.vogt@AMERICOLD.COM,smtp:BVogt2@HALLSCORP.com
+UserMailbox,brittney.vogt@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=e04feede94934543a2e922980f226de1-Britt
+UserMailbox,bryan.mackey@AMERICOLD.COM,SMTP:bmackey@HALLSCORP.com
+UserMailbox,bryan.mackey@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=0c0fe65cee9b4122b014ac106ff9c2e3-Bryan
+UserMailbox,charlie.hoppe@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=74415910b3f644bc9478a5a9619c2a4d
+UserMailbox,charlie.hoppe@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=8a5590c82cf94fa6b069d863a2983b03-Charl
+UserMailbox,charlie.hoppe@AMERICOLD.COM,SMTP:choppe@HALLSCORP.com
+UserMailbox,cheng.bi@AMERICOLD.COM,SMTP:cbi@HALLSCORP.com
+UserMailbox,cheng.bi@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=028565801087440c9176704316bd2b9f-Cheng
+UserMailbox,chris.christ@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=ec828ff3b2c5412f8e8457140927f55f
+UserMailbox,chris.christ@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=cchrist
+UserMailbox,chris.christ@AMERICOLD.COM,SMTP:cchrist@HALLSCORP.com
+UserMailbox,christian.cintron@AMERICOLD.COM,SMTP:christianc@HALLSCORP.com
+UserMailbox,christian.cintron@AMERICOLD.COM,smtp:CCintron@HALLSCORP.com
+UserMailbox,christian.cintron@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=3cd6d4782b684946b0161d101c5a1751-Chris
+UserMailbox,christian.sumilat@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=948eac2b97c1427b9be11985e035f427
+UserMailbox,christian.sumilat@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=csumilat
+UserMailbox,christian.sumilat@AMERICOLD.COM,SMTP:csumilat@HALLSCORP.com
+UserMailbox,christty.sumilat@AMERICOLD.COM,SMTP:cssumilat@HALLSCORP.com
+UserMailbox,christty.sumilat@AMERICOLD.COM,smtp:CSumilat2@HALLSCORP.com
+UserMailbox,christty.sumilat@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=0f5ebc14ee6644e9823d2b15ca1e6e13-Chris
+UserMailbox,claudine.ciullo@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=8f8d5b32bb7f43929af0b55df61a5232
+UserMailbox,claudine.ciullo@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=cciullo
+UserMailbox,claudine.ciullo@AMERICOLD.COM,SMTP:cciullo@HALLSCORP.com
+UserMailbox,corey.campohermoso@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=28bc66493fd34528b2de8aea1f2372e9
+UserMailbox,corey.campohermoso@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=ccampohermoso
+UserMailbox,corey.campohermoso@AMERICOLD.COM,SMTP:ccampohermoso@HALLSCORP.com
+UserMailbox,craig.mitchell@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=81f4484f6cf644b09a43ba6c4363e4b8
+UserMailbox,craig.mitchell@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=cmitchell
+UserMailbox,craig.mitchell@AMERICOLD.COM,SMTP:cmitchell@HALLSCORP.com
+UserMailbox,cynthia.howarth@AMERICOLD.COM,SMTP:chowarth@HALLSCORP.com
+UserMailbox,cynthia.howarth@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=84bebf49ee814104ada65d09a4707a01-Cynth
+UserMailbox,dalis.mundaray@AMERICOLD.COM,SMTP:dmundaray@HALLSCORP.com
+UserMailbox,dalis.mundaray@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=3d591f729aee419d89f61cc08f5b9523-Dalis
+UserMailbox,dally.trakilovic@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=92ee6fa7548f41d385833e53c6b04406
+UserMailbox,dally.trakilovic@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=708af1c21a30499b99418b0c5d96f89f-Dally
+UserMailbox,dally.trakilovic@AMERICOLD.COM,SMTP:dtrakilovic@HALLSCORP.com
+UserMailbox,dan.cesare@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=1674b5a657a447fb931a4643c26b6ec5
+UserMailbox,dan.cesare@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=dcesare
+UserMailbox,dan.cesare@AMERICOLD.COM,SMTP:dcesare@HALLSCORP.com
+UserMailbox,dan.channel@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=dea5cd1f47fb4c42bc286c4514fd9590
+UserMailbox,dan.channel@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=b0aed666d715445b9061cacb845d622f-Dan C
+UserMailbox,dan.channel@AMERICOLD.COM,SMTP:dchannel@HALLSCORP.com
+UserMailbox,dan.turner@AMERICOLD.COM,SMTP:dturner@HALLSCORP.com
+UserMailbox,dan.turner@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=185a571354cc4ac5a476d4ed9586f02c-Dan T
+UserMailbox,dan.wahler@AMERICOLD.COM,SMTP:dwahler@HALLSCORP.com
+UserMailbox,dan.wahler@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=816a6eac24c44297b64dfa85876f16f5-Danie
+UserMailbox,danny.defalco@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=3de7f7e646fc48aa89f886e205f263a8
+UserMailbox,danny.defalco@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=ddefalco
+UserMailbox,danny.defalco@AMERICOLD.COM,SMTP:ddefalco@HALLSCORP.com
+UserMailbox,dave.thompson@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=7e43fbf5ae4649ab98056f304ea9af1b-Dave
+UserMailbox,dave.thompson@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=00c312e0e7004b61a1224c4f85e44273
+UserMailbox,dave.thompson@AMERICOLD.COM,SMTP:dthompson@HALLSCORP.com
+UserMailbox,david.wing@AMERICOLD.COM,SMTP:dwing@HALLSCORP.com
+UserMailbox,david.wing@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=f0465bdc95f045f780f6315953756a4e-David
+UserMailbox,devon.harris@americold.com,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=0c0bf0c164ed440c907302d8a7a952b7
+UserMailbox,devon.harris@americold.com,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=7cc36f313ee544298eab78515f6369d8-Devon
+UserMailbox,devon.harris@americold.com,SMTP:dharris@HALLSCORP.com
+UserMailbox,dian.pangemanan@AMERICOLD.COM,SMTP:dpangemanan@HALLSCORP.com
+UserMailbox,dian.pangemanan@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=79d75c7a442a454aba23d31d6edb9e34-Dian
+UserMailbox,diana.kestenbaum@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=da4281dd903448b4a384a7e79bafa2d0
+UserMailbox,diana.kestenbaum@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=aac5af0091e74896962b7471144caf96-Diana
+UserMailbox,diana.kestenbaum@AMERICOLD.COM,SMTP:dkestenbaum@HALLSCORP.com
+UserMailbox,diane.bartone@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=dbartone
+UserMailbox,diane.bartone@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=1a95c3942c6845ba869b7d95c4d35ccb
+UserMailbox,diane.bartone@AMERICOLD.COM,SMTP:dbartone@HALLSCORP.com
+UserMailbox,diego.rantung@AMERICOLD.COM,SMTP:drantung@HALLSCORP.com
+UserMailbox,diego.rantung@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=6f59171e2d3541b3b2216f0cc2081567-Diego
+UserMailbox,doug.foster@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=be6b2344cc3742a9903ba68977094219
+UserMailbox,doug.foster@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=3a2325d0c3014eb8bff24cb47252895f-Doug
+UserMailbox,doug.foster@AMERICOLD.COM,SMTP:dfoster@HALLSCORP.com
+UserMailbox,ecas@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=df3d09e7b5634fd3a09eb6b7a6fffa5d
+UserMailbox,ecas@AMERICOLD.COM,SMTP:ecas@HALLSCORP.com
+UserMailbox,ecas@AMERICOLD.COM,smtp:e@HALLSCORP.com
+UserMailbox,ecas@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=ecas
+UserMailbox,edgar.xicohtencatl@AMERICOLD.COM,SMTP:exicohtencatl@HALLSCORP.com
+UserMailbox,edgar.xicohtencatl@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=7f0cf8f386b44c55b945462c75e7c04e-Edgar
+UserMailbox,edi.halls@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=9b82d22a8d634d488703881989dd67bc
+UserMailbox,edi.halls@AMERICOLD.COM,smtp:E2@HALLSCORP.com
+UserMailbox,edi.halls@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=edi
+UserMailbox,edi.halls@AMERICOLD.COM,SMTP:edi@HALLSCORP.com
+UserMailbox,edi.ramparla@AMERICOLD.COM,SMTP:ediramparla@HALLSCORP.com
+UserMailbox,edi.ramparla@AMERICOLD.COM,smtp:ERampArla@HALLSCORP.com
+UserMailbox,edi.ramparla@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=0db8157fa19b4bf78b90f686f9749a52-EDI
+UserMailbox,edi.ramp@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=3d9c5a3ba3504f7ebe0a5c29cc81d1e4
+UserMailbox,edi.ramp@AMERICOLD.COM,smtp:ERamp@HALLSCORP.com
+UserMailbox,edi.ramp@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=797e81392a2040eb9090996f9657a024-Edi R
+UserMailbox,edi.ramp@AMERICOLD.COM,SMTP:ediramp@HALLSCORP.com
+UserMailbox,edi.rampbm@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=d83748815474450b942804da1a99ea52
+UserMailbox,edi.rampbm@AMERICOLD.COM,SMTP:edirampbm@HALLSCORP.com
+UserMailbox,edi.rampbm@AMERICOLD.COM,smtp:ERampBM@HALLSCORP.com
+UserMailbox,edi.rampbm@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=bc5298b708ff40c6a3eb8d75a86a3a9c-Edi R
+UserMailbox,edi.rampint@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=a3c6beea043b4131b6af8604766c8e06
+UserMailbox,edi.rampint@AMERICOLD.COM,smtp:ERampINT@HALLSCORP.com
+UserMailbox,edi.rampint@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=faab48397c6743ac9f91208c72bb6e1b-EDI R
+UserMailbox,edi.rampint@AMERICOLD.COM,SMTP:edirampint@HALLSCORP.com
+UserMailbox,edi.rampranpas@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=c118dff69ca440e5b15df0dc3ab4586a
+UserMailbox,edi.rampranpas@AMERICOLD.COM,SMTP:ediramprp@HALLSCORP.com
+UserMailbox,edi.rampranpas@AMERICOLD.COM,smtp:ERanpas@HALLSCORP.com
+UserMailbox,edi.rampranpas@AMERICOLD.COM,smtp:ediranpas@HALLSCORP.com
+UserMailbox,edi.rampranpas@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=ediranpas
+UserMailbox,edi.rampwc@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=c6f36ba8b75f45859d6699118d3d0b39
+UserMailbox,edi.rampwc@AMERICOLD.COM,smtp:EWC@HALLSCORP.com
+UserMailbox,edi.rampwc@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=8c466da7a42041b89cb9641eae617489-EDI R
+UserMailbox,edi.rampwc@AMERICOLD.COM,SMTP:edirampwc@HALLSCORP.com
+UserMailbox,edison.ic@AMERICOLD.COM,SMTP:edisonic@HALLSCORP.com
+UserMailbox,edison.ic@AMERICOLD.COM,smtp:EIC@HALLSCORP.com
+UserMailbox,edison.ic@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=bba07ab487024f73b8ceaf48c554e9ef-Ediso
+UserMailbox,edison.switcher@AMERICOLD.COM,SMTP:edswitch@HALLSCORP.com
+UserMailbox,edison.switcher@AMERICOLD.COM,smtp:ESwitcher@HALLSCORP.com
+UserMailbox,edison.switcher@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=9eb05722361541b49565b95982dbeb6c-Ediso
+UserMailbox,eesha.kapadia@AMERICOLD.COM,SMTP:ekapadia@HALLSCORP.com
+UserMailbox,eesha.kapadia@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=784619b1d5ca407ab595fa5e47c44ca2-Eesha
+UserMailbox,emmanuel.laoagan@AMERICOLD.COM,SMTP:elaoagan@HALLSCORP.com
+UserMailbox,emmanuel.laoagan@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=0781e11217d0474eb0ea718e890dbfd6-Emman
+UserMailbox,frankie.patino@AMERICOLD.COM,SMTP:fpatino@HALLSCORP.com
+UserMailbox,frankie.patino@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=160dbf63f94f4fe1b17be6fcd735ee9a-Frank
+UserMailbox,fred.diem@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=d35370f3fe1f4247b407aea9211bb520
+UserMailbox,fred.diem@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=fdiem
+UserMailbox,fred.diem@AMERICOLD.COM,SMTP:fdiem@HALLSCORP.com
+UserMailbox,gabe.posada@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=027e410c7ddd42f482bd53425c954a5a
+UserMailbox,gabe.posada@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=c3fe7495f1e946a3a0ae4935817fbe3b-Gabe
+UserMailbox,gabe.posada@AMERICOLD.COM,SMTP:gposada@HALLSCORP.com
+UserMailbox,gilberto.serrano@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=b11abadde05044b9a2a5486bf023e59e
+UserMailbox,gilberto.serrano@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=gserrano
+UserMailbox,gilberto.serrano@AMERICOLD.COM,SMTP:gserrano@HALLSCORP.com
+UserMailbox,gilberto.serranojr@AMERICOLD.COM,SMTP:gserranojr@HALLSCORP.com
+UserMailbox,gilberto.serranojr@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=bc0a75a501ca48319aac28f2e7cc3b11-Gilbe
+UserMailbox,glenn.bach@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=f991fd43f06f4d20a2370fc9c7a85197
+UserMailbox,glenn.bach@AMERICOLD.COM,x500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=gbach
+UserMailbox,glenn.bach@AMERICOLD.COM,SMTP:gbach@HALLSCORP.com
+UserMailbox,gonzalo.ruiz@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=1feceaa3b7b0482582870ad39076c101
+UserMailbox,gonzalo.ruiz@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=gruiz
+UserMailbox,gonzalo.ruiz@AMERICOLD.COM,SMTP:gruiz@HALLSCORP.com
+UserMailbox,goto.meeting@AMERICOLD.COM,SMTP:gotomeeting@HALLSCORP.com
+UserMailbox,goto.meeting@AMERICOLD.COM,smtp:GMeeting@HALLSCORP.com
+UserMailbox,goto.meeting@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=b0a69ee03ff349a09081d0d8ff22cc1b-Goto
+UserMailbox,goto.meeting2@AMERICOLD.COM,SMTP:gotomeeting2@HALLSCORP.com
+UserMailbox,goto.meeting2@AMERICOLD.COM,smtp:GMeeting2@HALLSCORP.com
+UserMailbox,goto.meeting2@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=54f5218e5ee34d1bb9c6ea62245165a0-Goto
+UserMailbox,halls.admin@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=abcc247f5c244f12a0432a8e46d2858d
+UserMailbox,halls.admin@AMERICOLD.COM,smtp:HAdmin@HALLSCORP.com
+UserMailbox,halls.admin@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=hallsadmin
+UserMailbox,halls.admin@AMERICOLD.COM,SMTP:hallsadmin@HALLSCORP.com
+UserMailbox,halls.shopuser@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=18be5701e96f445cad234b91a607926c
+UserMailbox,halls.shopuser@AMERICOLD.COM,SMTP:shopuser@HALLSCORP.com
+UserMailbox,halls.shopuser@AMERICOLD.COM,smtp:HShopusers@HALLSCORP.com
+UserMailbox,halls.shopuser@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=shopuser
+UserMailbox,hector.pinzon@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=a40e381b16034e00bed900b092e5a970
+UserMailbox,hector.pinzon@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=hpinzon
+UserMailbox,hector.pinzon@AMERICOLD.COM,SMTP:hpinzon@HALLSCORP.com
+UserMailbox,henry.rabago@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=812dd018e93c44629446246043458cfb
+UserMailbox,henry.rabago@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=hrabago
+UserMailbox,henry.rabago@AMERICOLD.COM,SMTP:hrabago@HALLSCORP.com
+UserMailbox,herry.karonkong@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=8caf2583dc54403495d4e26f0237d787
+UserMailbox,herry.karonkong@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=16e8e78a75904f7780a951dbdfce822c-Herry
+UserMailbox,herry.karonkong@AMERICOLD.COM,SMTP:hkarongkong@HALLSCORP.com
+UserMailbox,icha.senduk@AMERICOLD.COM,SMTP:isenduk@HALLSCORP.com
+UserMailbox,icha.senduk@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=ce416ff75e7f452f8fe6e0dd73aa5503-Icha
+UserMailbox,jackie.spath@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=7dcc585f3b8042abbbcd82582a773187
+UserMailbox,jackie.spath@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=9098c90d554546dc92e9bcd1b83cb4ed-Jacki
+UserMailbox,jackie.spath@AMERICOLD.COM,SMTP:jspath@HALLSCORP.com
+UserMailbox,jaclyn.decillis@AMERICOLD.COM,SMTP:jdecillis@HALLSCORP.com
+UserMailbox,jaclyn.decillis@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=4e79e3dbdb144d34be43520ecf24dea8-Jacly
+UserMailbox,jaime.mejia@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=59a717528bcf42eea5ed0e97f1a9a59e
+UserMailbox,jaime.mejia@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=jmejia
+UserMailbox,jaime.mejia@AMERICOLD.COM,SMTP:jmejia@HALLSCORP.com
+UserMailbox,janie.walsh@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=cbc6cf01a6da4f21af57d81e9da9ec4a
+UserMailbox,janie.walsh@AMERICOLD.COM,x500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=jwalsh
+UserMailbox,janie.walsh@AMERICOLD.COM,SMTP:jwalsh@HALLSCORP.com
+UserMailbox,jean.mchugh@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=d3b64406a2d74976b3f678b03e1b964d
+UserMailbox,jean.mchugh@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=jmchugh
+UserMailbox,jean.mchugh@AMERICOLD.COM,SMTP:jmchugh@HALLSCORP.com
+UserMailbox,jeff.johnson@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=66822d5c980843b5a5ee7c5609a650cc
+UserMailbox,jeff.johnson@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=6ad7a12d79c743d7928ed41032fc310d-Jeff
+UserMailbox,jeff.johnson@AMERICOLD.COM,SMTP:jjohnson@HALLSCORP.com
+UserMailbox,jeniffer.montalvo@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=f9ff90b005274733a20564082c629c27
+UserMailbox,jeniffer.montalvo@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=90a2098f62a948369367c7e58ef9d1e2-Jenif
+UserMailbox,jeniffer.montalvo@AMERICOLD.COM,SMTP:jrosado@HALLSCORP.com
+UserMailbox,jennifer.nasta@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=4620e505f4cf415e8c836237061e674a
+UserMailbox,jennifer.nasta@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=jbusbee
+UserMailbox,jennifer.nasta@AMERICOLD.COM,SMTP:jbusbee@HALLSCORP.com
+UserMailbox,jenny.fernandez@AMERICOLD.COM,SMTP:jdavila@HALLSCORP.com
+UserMailbox,jenny.fernandez@AMERICOLD.COM,smtp:JFernandez-Davila@HALLSCORP.com
+UserMailbox,jenny.fernandez@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=8661ae509689490183992ce0f053a5a8-Jenny
+UserMailbox,jeri.pavenski@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=dfa1184e001446c6a0a923eb1c44f487
+UserMailbox,jeri.pavenski@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=jpavenski
+UserMailbox,jeri.pavenski@AMERICOLD.COM,SMTP:jpavenski@HALLSCORP.com
+UserMailbox,jessica.delacruz@AMERICOLD.COM,SMTP:jdelacruz@HALLSCORP.com
+UserMailbox,jessica.delacruz@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=23218e6d33784fc19e4549b8daf8c5e3-Jessi
+UserMailbox,jim.cox@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=0f8321f5665e4695904fbd01173a6d4d
+UserMailbox,jim.cox@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=6c3fbaa856b743ac9f38b9a9082ab891-Jim C
+UserMailbox,jim.cox@AMERICOLD.COM,SMTP:jcox@HALLSCORP.com
+UserMailbox,jim.youngkin@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=3f7a61103f2148689dce0bc86d1e33b5
+UserMailbox,jim.youngkin@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=jyoungkin
+UserMailbox,jim.youngkin@AMERICOLD.COM,SMTP:jyoungkin@HALLSCORP.com
+UserMailbox,joaquin.barrios@AMERICOLD.COM,SMTP:jbarrios@HALLSCORP.com
+UserMailbox,joaquin.barrios@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=3719300d846b4d65b1efe158423e2b47-Joaqu
+UserMailbox,joe.tomei@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=55c70beeebf849ff8c7f4859038b6f45-Joe T
+UserMailbox,joe.tomei@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=a5c0885858dc4e9f956abb11a725d747
+UserMailbox,joe.tomei@AMERICOLD.COM,SMTP:jtomei@HALLSCORP.com
+UserMailbox,joel.villalobos@AMERICOLD.COM,SMTP:jvillalobos@HALLSCORP.com
+UserMailbox,joel.villalobos@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=c61564fd58d64d1c871f5e3c86443bad-Joel
+UserMailbox,johnny.cummings@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=c5c8d1643c5a49eabc867c268a3ad99c
+UserMailbox,johnny.cummings@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=jcummings
+UserMailbox,johnny.cummings@AMERICOLD.COM,SMTP:jcummings@HALLSCORP.com
+UserMailbox,jorge.martinez@AMERICOLD.COM,SMTP:jmartinez@HALLSCORP.com
+UserMailbox,jorge.martinez@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=3974b02fa5e845e4bbae1373b701e538-Jorge
+UserMailbox,joe.strumolo@AMERICOLD.COM,SMTP:jstrumolo@HALLSCORP.com
+UserMailbox,joe.strumolo@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=0357b22f21bc4eb4af742036747d45d6-Josep
+UserMailbox,joshua.rodriguez@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=cec37ee504ab412684b029db0eb63148
+UserMailbox,joshua.rodriguez@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=jrodriguez
+UserMailbox,joshua.rodriguez@AMERICOLD.COM,SMTP:jrodriguez@HALLSCORP.com
+UserMailbox,justin.gonzalez@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=26918111604f4d818d82fd052dd02fa4
+UserMailbox,justin.gonzalez@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=jgonzalez
+UserMailbox,justin.gonzalez@AMERICOLD.COM,SMTP:jgonzalez@HALLSCORP.com
+UserMailbox,kaitlin.tomei@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=1b1b792348e349b1a8aa25f320d64f01
+UserMailbox,kaitlin.tomei@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=ktomei
+UserMailbox,kaitlin.tomei@AMERICOLD.COM,SMTP:ktomei@HALLSCORP.com
+UserMailbox,katina.gonzales@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=bc4ea44a58d44212a3aa831d320c19e5
+UserMailbox,katina.gonzales@AMERICOLD.COM,SMTP:kgonzales@HALLSCORP.com
+UserMailbox,katina.gonzales@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=c4e096c527fa4b11856eec39ecd7ff4b-Katin
+UserMailbox,kentile.guard1@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=91a46dcb04474ef697f8d2ad8b7915ee
+UserMailbox,kentile.guard1@AMERICOLD.COM,SMTP:kguard1@HALLSCORP.com
+UserMailbox,kentile.guard1@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=0da75072a8204988ad6569b1a7032736-Kenti
+UserMailbox,kentile.guard2@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=a599ac3838be4154a1a125a9f44ab259
+UserMailbox,kentile.guard2@AMERICOLD.COM,SMTP:kguard2@HALLSCORP.com
+UserMailbox,kentile.guard2@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=822fb40229724d168b45f6a452c330d2-Kenti
+UserMailbox,kentile.ring@AMERICOLD.COM,SMTP:kentilering@HALLSCORP.com
+UserMailbox,kentile.ring@AMERICOLD.COM,smtp:KRing@HALLSCORP.com
+UserMailbox,kentile.ring@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=46afb8d8a95a41668ff6d8c5bd35913c-Kenti
+UserMailbox,kevin.riley@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=de0553a9497d4c26802466632266a744
+UserMailbox,kevin.riley@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=96ab8d6eaa514313a930fdae3437bc92-Kevin
+UserMailbox,kevin.riley@AMERICOLD.COM,SMTP:kriley@HALLSCORP.com
+UserMailbox,kevin.schneider@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=bf9b3a3b5a3542cf9aaee756b5f7a274
+UserMailbox,kevin.schneider@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=fb35ba52dc154dae9edb63a956ced455-Kevin
+UserMailbox,kevin.schneider@AMERICOLD.COM,SMTP:kschneider@HALLSCORP.com
+UserMailbox,kevin.weaver@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=e24d789c4b6c4dc7914d701ca735a809
+UserMailbox,kevin.weaver@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=604a3d3a65ae40d8a23d67a176e5d13f-Kevin
+UserMailbox,kevin.weaver@AMERICOLD.COM,SMTP:kweaver@HALLSCORP.com
+UserMailbox,kristin.ruane@AMERICOLD.COM,SMTP:kruane@HALLSCORP.com
+UserMailbox,kristin.ruane@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=dd257dc101b14ed190d111f5a3bde2cb-Krist
+UserMailbox,larry.smith@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=9f7573b446bf4d26838a4accd1f6179a
+UserMailbox,larry.smith@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=lsmith
+UserMailbox,larry.smith@AMERICOLD.COM,SMTP:lsmith@HALLSCORP.com
+UserMailbox,lesley.rodriguez@AMERICOLD.COM,SMTP:lrodriguez@HALLSCORP.com
+UserMailbox,lesley.rodriguez@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=e66dde94d0854713be65c7d992def008-Lesly
+UserMailbox,lisa.collins@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=4aae9fd9b0eb415ab1b3d591917aedf7
+UserMailbox,lisa.collins@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=6f89f9d319a5425a8cab2b66ba9b79e6-Lisa
+UserMailbox,lisa.collins@AMERICOLD.COM,SMTP:lcollins@HALLSCORP.com
+UserMailbox,lisa.malltell@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=a60cffd3128e45a182cd02981b55b586
+UserMailbox,lisa.malltell@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=c508529bc38b4528bd920b1f108b9779-Lisa
+UserMailbox,lisa.malltell@AMERICOLD.COM,SMTP:lmalltell@HALLSCORP.com
+UserMailbox,liz.montalvo@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=44c999a374ad4008b0d0f544189e4da6
+UserMailbox,liz.montalvo@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=7b53a6100ab742a796aecdb0901e4035-Liz M
+UserMailbox,liz.montalvo@AMERICOLD.COM,SMTP:lmontalvo@HALLSCORP.com
+UserMailbox,lorena.ruiz@AMERICOLD.COM,SMTP:lruiz@HALLSCORP.com
+UserMailbox,lorena.ruiz@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=1945498a8a9348e79ac4b51a793f99b2-Loren
+UserMailbox,lori.hagerty@AMERICOLD.COM,SMTP:lhagerty@HALLSCORP.com
+UserMailbox,lori.hagerty@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=ad5e0088fc2e44fe80dc266f51dea599
+UserMailbox,lori.hagerty@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=lhagerty
+UserMailbox,luis.bohorquez@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=4919a6f0d5c04bdc927e3b5bc333249c
+UserMailbox,luis.bohorquez@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=lbohorquez
+UserMailbox,luis.bohorquez@AMERICOLD.COM,SMTP:lbohorquez@HALLSCORP.com
+UserMailbox,lynn.rajewski@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=3ae34acbcbfe448faad628e3154ba66f
+UserMailbox,lynn.rajewski@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=5cf285a18e5047df9557f7fb4ddcf65c-Lynn
+UserMailbox,lynn.rajewski@AMERICOLD.COM,SMTP:lrajewski@HALLSCORP.com
+UserMailbox,marco.condenzo@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=4d1bd771c7ef4953ac548f6dac45cbc7
+UserMailbox,marco.condenzo@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=mcondezo
+UserMailbox,marco.condenzo@AMERICOLD.COM,SMTP:mcondezo@HALLSCORP.com
+UserMailbox,mark.ogonowski@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=775c716d503e4a148cd40bfd2ff6bc18
+UserMailbox,mark.ogonowski@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=mogonowski
+UserMailbox,mark.ogonowski@AMERICOLD.COM,SMTP:mogonowski@HALLSCORP.com
+UserMailbox,martha.fee@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=57d49e6340a34653b2b96f7ffbad5029
+UserMailbox,martha.fee@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=mfee
+UserMailbox,martha.fee@AMERICOLD.COM,SMTP:mfee@HALLSCORP.com
+UserMailbox,marty.helfer@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=7beef9b186604119929c3b71f0b1ff94
+UserMailbox,marty.helfer@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=9b4545300aa84898990b8df413ca0ef6-Marty
+UserMailbox,marty.helfer@AMERICOLD.COM,SMTP:mhelfer@HALLSCORP.com
+UserMailbox,marvyn.cifuentes@AMERICOLD.COM,SMTP:marvync@HALLSCORP.com
+UserMailbox,marvyn.cifuentes@AMERICOLD.COM,smtp:MCifuentes2@HALLSCORP.com
+UserMailbox,marvyn.cifuentes@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=296c4de052b1418ca6f0f81bfd48ac37-Marvi
+UserMailbox,matthew.herbig@AMERICOLD.COM,SMTP:mherbig@HALLSCORP.com
+UserMailbox,matthew.herbig@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=9ade8d35118f4338a24e700566ddfa65-Matth
+UserMailbox,michael.powell@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=1222684b4a9f46ab930f99553d0fcc94
+UserMailbox,michael.powell@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=51046df0d2ba493cb89ed8cac730ba39-Micha
+UserMailbox,michael.powell@AMERICOLD.COM,SMTP:mpowell@HALLSCORP.com
+UserMailbox,michael.tritto@AMERICOLD.COM,SMTP:mtritto@HALLSCORP.com
+UserMailbox,michael.tritto@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=7cb6a43158af4ddeb2d6fcbcd78e77b3-Micha
+UserMailbox,michele.salvatore@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=30ef498999ff44abbcf13a0063eea457
+UserMailbox,michele.salvatore@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=msalvatore
+UserMailbox,michele.salvatore@AMERICOLD.COM,SMTP:msalvatore@HALLSCORP.com
+UserMailbox,michelle.peterson@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=510bb0c9d2ea4140b4fcd71bb32d72db
+UserMailbox,michelle.peterson@AMERICOLD.COM,SMTP:mpeterson@HALLSCORP.com
+UserMailbox,michelle.peterson@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=mpeterson
+UserMailbox,michelle.vasquez@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=08185d5e96e740e0a564acac5437bfe9
+UserMailbox,michelle.vasquez@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=9aac8bd7d962476a9941fdada22d67b4-Miche
+UserMailbox,michelle.vasquez@AMERICOLD.COM,SMTP:mvasquez@HALLSCORP.com
+UserMailbox,michelle.walker@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=b1b8a19d96264de3ac528d8f910477c2
+UserMailbox,michelle.walker@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=mwalker
+UserMailbox,michelle.walker@AMERICOLD.COM,SMTP:mwalker@HALLSCORP.com
+UserMailbox,miriam.lingga@AMERICOLD.COM,SMTP:mlingga@HALLSCORP.com
+UserMailbox,miriam.lingga@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=a8bd446f7a5f4aa3b3a3198b1f7a4b79-Miria
+UserMailbox,nancy.caterino@AMERICOLD.COM,SMTP:nacaterino@HALLSCORP.com
+UserMailbox,nancy.caterino@AMERICOLD.COM,smtp:NCaterino2@HALLSCORP.com
+UserMailbox,nancy.caterino@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=a91451e62ae443a7b5dc252ae5fa7ca3-Nancy
+UserMailbox,nancy.zipfel@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=4dc8df6860704da2aa40c8a5fb3accd7
+UserMailbox,nancy.zipfel@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=nzepfel
+UserMailbox,nancy.zipfel@AMERICOLD.COM,smtp:nzepfel@HALLSCORP.com
+UserMailbox,nancy.zipfel@AMERICOLD.COM,SMTP:nzipfel@HALLSCORP.com
+UserMailbox,ned.runser@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=ab5704aa7d214afbb4823c0cb5799c3d
+UserMailbox,ned.runser@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=52cb007d3db44105b370da2e5ad1e263-Ned R
+UserMailbox,ned.runser@AMERICOLD.COM,SMTP:nrunser@HALLSCORP.com
+UserMailbox,nelson.soler@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=32c7b96881c04667bf46c8bb23677d5a
+UserMailbox,nelson.soler@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=06553198b02d49f9b25660c77655a15a-Nelso
+UserMailbox,nelson.soler@AMERICOLD.COM,SMTP:nsoler@HALLSCORP.com
+UserMailbox,nancy.caterino@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=9bae5d2a0cd54b26ae37008cbeb04c1e
+UserMailbox,nancy.caterino@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=9ded1f26645745d6928e48bcb1a55b80-Nick
+UserMailbox,nancy.caterino@AMERICOLD.COM,SMTP:ncaterino@HALLSCORP.com
+UserMailbox,nick.pizzo@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=92109a07d94a4cc08b51c9b9c2d7cdaa-Nick
+UserMailbox,nick.pizzo@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=12e409a5b4944d2abae11e32e77d9f26
+UserMailbox,nick.pizzo@AMERICOLD.COM,SMTP:npizzo@HALLSCORP.com
+UserMailbox,oaktree.guard@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=c1219fc341f849a6bca57b94f78f8bf7
+UserMailbox,oaktree.guard@AMERICOLD.COM,smtp:OGuard@HALLSCORP.com
+UserMailbox,oaktree.guard@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=oaktreeguard
+UserMailbox,oaktree.guard@AMERICOLD.COM,SMTP:oaktreeguard@HALLSCORP.com
+UserMailbox,oktavia.rombot@AMERICOLD.COM,SMTP:orombot@HALLSCORP.com
+UserMailbox,oktavia.rombot@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=14483704757c48939eff518d85ada901-Oktav
+UserMailbox,pam.ganesh@AMERICOLD.COM,x500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=pganesh
+UserMailbox,pam.ganesh@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=412a8578d5a846aa8fd9d4e22392708c
+UserMailbox,pam.ganesh@AMERICOLD.COM,SMTP:pganesh@HALLSCORP.com
+UserMailbox,patrick.sahradnik@AMERICOLD.COM,x500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=psahradnik
+UserMailbox,patrick.sahradnik@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=649f5338cb9c45439f63a6482c777b49
+UserMailbox,patrick.sahradnik@AMERICOLD.COM,SMTP:psahradnik@HALLSCORP.com
+UserMailbox,pedro.desouza@AMERICOLD.COM,SMTP:pdesouza@HALLSCORP.com
+UserMailbox,pedro.desouza@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=c0d99bbfff8f4a6b8f205072259b937d-Pedro
+UserMailbox,pete.roessle@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=2b55bd7ba1f24b048d222a11671deaf6
+UserMailbox,pete.roessle@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=3085a76473144d33a7377124740428f9-Pete
+UserMailbox,pete.roessle@AMERICOLD.COM,SMTP:proessle@HALLSCORP.com
+UserMailbox,rd117.sandr@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=b0ae831c1a3344e29468d994f1c7a360
+UserMailbox,rd117.sandr@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=rd117sandr
+UserMailbox,rd117.sandr@AMERICOLD.COM,smtp:RSandR@HALLSCORP.com
+UserMailbox,rd117.sandr@AMERICOLD.COM,SMTP:rd117sandr@HALLSCORP.com
+UserMailbox,reneed.harris@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=bf95dcb7ecf54738abc3f8c6f46dd8a1
+UserMailbox,reneed.harris@AMERICOLD.COM,smtp:RHarris2@HALLSCORP.com
+UserMailbox,reneed.harris@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=rdharris
+UserMailbox,reneed.harris@AMERICOLD.COM,SMTP:rdharris@HALLSCORP.com
+UserMailbox,resdep.produce@AMERICOLD.COM,SMTP:resdepproduce@HALLSCORP.com
+UserMailbox,resdep.produce@AMERICOLD.COM,smtp:RProduce2@HALLSCORP.com
+UserMailbox,resdep.produce@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=aaff0d9efa544dfcab320cedd13a2f2c-ResDe
+UserMailbox,richard.pedroza@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=2ba16befc0f44392ae98481f2107406b
+UserMailbox,richard.pedroza@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=rpedroza
+UserMailbox,richard.pedroza@AMERICOLD.COM,SMTP:rpedroza@HALLSCORP.com
+UserMailbox,richard.razon@AMERICOLD.COM,SMTP:rrazon@HALLSCORP.com
+UserMailbox,richard.razon@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=494f5f7bc35e4fa2b200f4665245400f-Richa
+UserMailbox,robert.conover@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=9f538ae98c6b47c998324367f940173d
+UserMailbox,robert.conover@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=74848419a08a4dcc818109c0713be3da-Rob C
+UserMailbox,robert.conover@AMERICOLD.COM,SMTP:rconover@HALLSCORP.com
+UserMailbox,robert.degirarde@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=c2aac71dbe774aab9992decc4ec70be3
+UserMailbox,robert.degirarde@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=rdegirarde
+UserMailbox,robert.degirarde@AMERICOLD.COM,SMTP:rdegirarde@HALLSCORP.com
+UserMailbox,robert.Miranda@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=84d2838ba9bc4870a3657b573928a638
+UserMailbox,robert.Miranda@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=rmiranda93934953
+UserMailbox,robert.Miranda@AMERICOLD.COM,SMTP:rmiranda@HALLSCORP.com
+UserMailbox,robert.pardua@AMERICOLD.COM,SMTP:rpardua@HALLSCORP.com
+UserMailbox,robert.pardua@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=557c6134c7e440a19c676235606168c5-Rober
+UserMailbox,rommel.sandoval@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=bc231db0b2b94a109a896d3e4ef59dbf
+UserMailbox,rommel.sandoval@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=2c0aa71022bb44ac88c6dd2c623003c7-Romme
+UserMailbox,rommel.sandoval@AMERICOLD.COM,SMTP:rsandoval@HALLSCORP.com
+UserMailbox,rose.bach@AMERICOLD.COM,SMTP:rbach@HALLSCORP.com
+UserMailbox,rose.bach@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=e330c354a426484bb13418b42243c869-Rose
+UserMailbox,roy.calderone@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=0513e40c9e9a4984905869620246f2d5
+UserMailbox,roy.calderone@AMERICOLD.COM,smtp:RCalderone@HALLSCORP.com
+UserMailbox,roy.calderone@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=roycalderone
+UserMailbox,roy.calderone@AMERICOLD.COM,SMTP:roycalderone@HALLSCORP.com
+UserMailbox,ruel.eguia@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=f829018f662c41b7825363ab85528795
+UserMailbox,ruel.eguia@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=reguia
+UserMailbox,ruel.eguia@AMERICOLD.COM,SMTP:reguia@HALLSCORP.com
+UserMailbox,sal.labruno@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=0b3d65cd050242baba93fb4fe852e2e1
+UserMailbox,sal.labruno@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=fff41e7b786745f4a2d4fe362dae5bdd-Sal L
+UserMailbox,sal.labruno@AMERICOLD.COM,SMTP:slabruno@HALLSCORP.com
+UserMailbox,salvador.espinoza@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=4c94b126d3ee47f0aefeba1c39d48877
+UserMailbox,salvador.espinoza@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=sespinoza
+UserMailbox,salvador.espinoza@AMERICOLD.COM,SMTP:sespinoza@HALLSCORP.com
+UserMailbox,sandra.falcon@AMERICOLD.COM,SMTP:sfalcon@HALLSCORP.com
+UserMailbox,sandra.falcon@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=5b4c9744e43745a7a36146b39ef592df-Sandr
+UserMailbox,heather.doehler@AMERICOLD.COM,SMTP:sanitationinspector@HALLSCORP.com
+UserMailbox,heather.doehler@AMERICOLD.COM,smtp:SInspector@HALLSCORP.com
+UserMailbox,heather.doehler@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=a416dc4ab91643178c47a0780aa6d6c1-Sanit
+UserMailbox,scott.vernborg@AMERICOLD.COM,SMTP:svernborg@HALLSCORP.com
+UserMailbox,scott.vernborg@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=04f66a1e8f854683bfd6eb6fc54d0207-Scott
+UserMailbox,sean.mohan@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=5b5580a856334eec81481e0ad9685373
+UserMailbox,sean.mohan@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=84555142664f4f45864a1392effbc904-Sean
+UserMailbox,sean.mohan@AMERICOLD.COM,SMTP:smohan@HALLSCORP.com
+UserMailbox,sean.watson@AMERICOLD.COM,SMTP:swatson@HALLSCORP.com
+UserMailbox,sean.watson@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=79210bb3f45b4f8fb96602375a893fba-Sean
+UserMailbox,sebastian.rojas@AMERICOLD.COM,SMTP:srojas@HALLSCORP.com
+UserMailbox,sebastian.rojas@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=337f9797121d413891c42f4dcadce8d3-Sebas
+UserMailbox,seisy.manopo@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=5dff597b2d504f5fbaa51dca70aafc5d
+UserMailbox,seisy.manopo@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=7943189077ae4f14be1681490f486301-Seisy
+UserMailbox,seisy.manopo@AMERICOLD.COM,SMTP:smanopo@HALLSCORP.com
+UserMailbox,sergei.cacho@AMERICOLD.COM,SMTP:scacho@HALLSCORP.com
+UserMailbox,sergei.cacho@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=fae57a352f344810a881feda2982e064
+UserMailbox,sergei.cacho@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=scacho
+UserMailbox,sujitha.keetipati@AMERICOLD.COM,SMTP:skeetipati@HALLSCORP.com
+UserMailbox,sujitha.keetipati@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=ca18ebe12e9e400ba34c7f67aea80d75-Sujit
+UserMailbox,summer.borrero@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=sborrero
+UserMailbox,summer.borrero@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=4bfceb941e344fc79dda949bb9355b30
+UserMailbox,summer.borrero@AMERICOLD.COM,SMTP:sborrero@HALLSCORP.com
+UserMailbox,tara.christensen@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=09f7d704eb9142fbbf65c7abe902e207
+UserMailbox,tara.christensen@AMERICOLD.COM,x500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=49fd007c65204375b74134764c4748f1-Tara
+UserMailbox,tara.christensen@AMERICOLD.COM,SMTP:tchristensen@HALLSCORP.com
+UserMailbox,tom.hemmerly@AMERICOLD.COM,SMTP:themmerly@HALLSCORP.com
+UserMailbox,tom.hemmerly@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=57089b5efbb24d6b8c717118c0c6cdf7-Thoma
+UserMailbox,todd.zahn@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=0a1afcc879c64793a9904fc7ddef9594
+UserMailbox,todd.zahn@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=tzahn
+UserMailbox,todd.zahn@AMERICOLD.COM,SMTP:tzahn@HALLSCORP.com
+UserMailbox,tom.brennan@AMERICOLD.COM,x500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=tbrennan
+UserMailbox,tom.brennan@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=59fbb088cf194de6a8fbc9353ddd0efa
+UserMailbox,tom.brennan@AMERICOLD.COM,SMTP:tbrennan@HALLSCORP.com
+UserMailbox,tony.mendoza@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=1c45d5eba8b64930a2966dff51a96fc4
+UserMailbox,tony.mendoza@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=7f79c2d8d58942d7883f53cf0ba2f005-Tony
+UserMailbox,tony.mendoza@AMERICOLD.COM,SMTP:tmendoza@HALLSCORP.com
+UserMailbox,valencia.west@AMERICOLD.COM,SMTP:vwest@HALLSCORP.com
+UserMailbox,valencia.west@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=0e76b82c1df3466280c5e2af257a5bf3-Valen
+UserMailbox,victor.malu@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=e830acb4161241e1898244a0cc0e730f
+UserMailbox,victor.malu@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=5989606609ff43ee995798b277246dd3-Victo
+UserMailbox,victor.malu@AMERICOLD.COM,SMTP:vmalu@HALLSCORP.com
+UserMailbox,vinny.hazelett@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=1e69bf55b0684b8ca80eee09b2c77346
+UserMailbox,vinny.hazelett@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=vhazelett
+UserMailbox,vinny.hazelett@AMERICOLD.COM,SMTP:vhazelett@HALLSCORP.com
+UserMailbox,vinny.roccanova@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=014dac18c40d400e877512465cbcbcd7
+UserMailbox,vinny.roccanova@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=vroccanova
+UserMailbox,vinny.roccanova@AMERICOLD.COM,SMTP:vroccanova@HALLSCORP.com
+UserMailbox,wanda.agusti@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=a105a089621742c8a95d668fc0d79e01
+UserMailbox,wanda.agusti@AMERICOLD.COM,x500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=wagusti
+UserMailbox,wanda.agusti@AMERICOLD.COM,SMTP:wagusti@HALLSCORP.com
+UserMailbox,warren.tamaroff@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=df091bb2916e4851ab87df0c940266b3
+UserMailbox,warren.tamaroff@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=wtamaroff
+UserMailbox,warren.tamaroff@AMERICOLD.COM,SMTP:wtamaroff@HALLSCORP.com
+UserMailbox,wil.biscardi@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=944988b8cbac4073b6ecf2b3a1b1531c
+UserMailbox,wil.biscardi@AMERICOLD.COM,x500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=wbiscardi
+UserMailbox,wil.biscardi@AMERICOLD.COM,SMTP:wbiscardi@HALLSCORP.com
+UserMailbox,william.jurado@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=c5d74dfab45f41fe8c4aee3d9f322768
+UserMailbox,william.jurado@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=87588f4ab3a64cb296b427c90a0b3f34-Willi
+UserMailbox,william.jurado@AMERICOLD.COM,SMTP:wjurado@HALLSCORP.com
+UserMailbox,yesenia.piano@AMERICOLD.COM,SMTP:ypiano@HALLSCORP.com
+UserMailbox,yesenia.piano@AMERICOLD.COM,X500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=dd1daf9f16b2478fa42420d6c0df1074-Yesen
+UserMailbox,yolanda.rosado@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=c029cbc304ac4bd081b3f41de4741775
+UserMailbox,yolanda.rosado@AMERICOLD.COM,X500:/o=First Organization/ou=First Administrative Group/cn=Recipients/cn=yrosado
+UserMailbox,yolanda.rosado@AMERICOLD.COM,SMTP:yrosado@HALLSCORP.com
+UserMailbox,zach.coppola@AMERICOLD.COM,x500:/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=0c55f63ff501498ebe4c3152737a6bdf
+UserMailbox,zach.coppola@AMERICOLD.COM,X500:/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=zcoppola
+UserMailbox,zach.coppola@AMERICOLD.COM,SMTP:zcoppola@HALLSCORP.com
