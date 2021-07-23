@@ -113,12 +113,17 @@ $MenuList = {
     Write-Host "	3) Set current & .onmicrosoft.com domain variable" -ForegroundColor White
     Write-Host "	4) Change the UserPrincipalName for all Office 365 users" -ForegroundColor White
     Write-Host "	5) Change Email Addresses for all Office 365 Mailboxes" -ForegroundColor White
-    Write-Host "	6) Change Email Addresses for all Groups" -ForegroundColor White
-    Write-Host "	7) Remove Domain from Office 365" -ForegroundColor White
+    Write-Host "	6) Change Email Addresses for all Distribution Groups" -ForegroundColor White
+    Write-Host "	7) Change Email Addresses for all Office 365 Groups" -ForegroundColor White
+    Write-Host "	8) Remove Domain Email Addresses from All Mailboxes" -ForegroundColor White
+    Write-Host "	9) Remove Domain Email Addresses from All Groups" -ForegroundColor White
+    Write-Host "	10) Remove Domain Email Addresses from All Office 365 Groups" -ForegroundColor White
+    Write-Host "	11) Remove Domain from Office 365" -ForegroundColor White
+    Write-Host "	12) Check for Problematic Remaining Users" -ForegroundColor White
     Write-Host "	"
-    Write-Host "	8) Exit" -ForegroundColor Cyan
+    Write-Host "	13) Exit" -ForegroundColor Cyan
     Write-Host "	"
-    Write-Host "	Select an option.. [1-8]? " -NoNewLine
+    Write-Host "	Select an option.. [1-13]? " -NoNewLine
 }
 
 Do {
@@ -162,7 +167,7 @@ Do {
         }
     }
 
-    5 {#   Change Email Addresses for all Office 365 Mailboxes
+    5 {#   Change Primary Email Addresses for all Office 365 Mailboxes
 
         $Users=Get-Mailbox -ResultSize Unlimited
         $Users | Foreach-Object{ 
@@ -175,7 +180,7 @@ Do {
         } 
     }
 
-    6 {#   Change Email Addresses for all Groups
+    6 {#   Change Primary Email Addresses for all Distribution Groups
 
         $Groups=Get-DistributionGroup -ResultSize Unlimited
         $Groups | Foreach-Object{ 
@@ -187,19 +192,79 @@ Do {
         }
     }
 
-    7 {#   Remove Domain from Office 365
+    7 {#   Change Primary Email Addresses for all Office 365 Groups
+
+        $Groups=Get-UnifiedGroup -ResultSize Unlimited
+        $Groups | Foreach-Object{ 
+        $group=$_
+        $groupname =($group.PrimarySmtpAddress -split "@")[0]
+        $SMTP ="SMTP:"+$groupname+"@"+$Newdomain 
+        $Emailaddress=$groupname+"@"+$Newdomain
+        $group | Set-UnifiedGroup -EmailAddresses $SMTP
+        $group | Set-UnifiedGroup -PrimarySMTPAddress $EmailAddress
+        }
+    }
+
+
+    8 {#   Remove Domain Email Addresses from All Mailboxes
+
+       $RemoveSMTPDomain = "smtp:*@$OldDomain"
+       $AllMailboxes = Get-Mailbox -ResultSize Unlimited| Where-Object {$_.EmailAddresses -like $RemoveSMTPDomain}
+       ForEach ($Mailbox in $AllMailboxes)
+       {  
+       $AllEmailAddress  = $Mailbox.EmailAddresses -notlike $RemoveSMTPDomain
+       $RemovedEmailAddress = $Mailbox.EmailAddresses -like $RemoveSMTPDomain
+       $MailboxID = $Mailbox.PrimarySmtpAddress 
+       $MailboxID | Set-Mailbox -EmailAddresses $AllEmailAddress
+       }
+    }
+
+    9 {#    Remove Domain Email Addresses from all Groups
+
+       $RemoveSMTPDomain = "smtp:*@$OldDomain"
+       $AllGroups = Get-DistributionGroup -ResultSize Unlimited| Where-Object {$_.EmailAddresses -like $RemoveSMTPDomain}
+       ForEach ($Group in $AllGroups)
+       {  
+       $AllEmailAddress  = $Group.EmailAddresses -notlike $RemoveSMTPDomain
+       $RemovedEmailAddress = $Group.EmailAddresses -like $RemoveSMTPDomain
+       $GroupID = $Group.PrimarySmtpAddress 
+       $GroupID | Set-DistributionGroup -EmailAddresses $AllEmailAddress
+       }
+    }
+
+    10 {#    Remove Domain Email Addresses from all Office 365 Groups
+
+       $RemoveSMTPDomain = "smtp:*@$OldDomain"
+       $AllGroups = Get-UnifiedGroup -ResultSize Unlimited| Where-Object {$_.EmailAddresses -like $RemoveSMTPDomain}
+       ForEach ($Group in $AllGroups)
+       {  
+       $AllEmailAddress  = $Group.EmailAddresses -notlike $RemoveSMTPDomain
+       $RemovedEmailAddress = $Group.EmailAddresses -like $RemoveSMTPDomain
+       $GroupID = $Group.PrimarySmtpAddress 
+       $GroupID | Set-UnifiedGroup -EmailAddresses $AllEmailAddress
+       }
+    }
+
+
+    11 {#   Remove Domain from Office 365
 
         Remove-MsolDomain -DomainName $olddomain -Force
     }
 
-    8 {#	Exit
+    12 {#   Check for Problematic Remaining Users
+
+       $IssueUsers = Get-MsolUser -DomainName $olddomain
+       $IssueUsers | Out-GridView
+    }
+
+    13 {#	Exit
 
         popd
         Write-Host "Exiting..."
     }
   }
 
- } While ($Choice -ne 8)
+ } While ($Choice -ne 13)
 
         
 
