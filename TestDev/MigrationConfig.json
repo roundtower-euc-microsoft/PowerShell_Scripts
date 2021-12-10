@@ -1,0 +1,10 @@
+{
+    "OldTenantName":"OldTenant",
+    "NewTenantName":"NewTenant",
+    "OldTenantDomain":"OldTenant.OnMicrosoft.com",
+    "NewTenantDomain":"NewTenant.OnMicrosoft.com",
+    "DomainsToMigrate":["FirstDomain.com","SecondDomain.com"],
+    "OldPrimarySMTP":"oldexample.com",
+    "NewPrimarySMTP":"newexample.com"
+
+}
