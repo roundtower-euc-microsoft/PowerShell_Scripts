@@ -3,19 +3,23 @@
 #
 $errlist = @()
 #
-if($False -eq test-path -path ".\MigrationConfig.json" -PathType leaf) {
+if($False -eq (Test-path -path ".\MigrationConfig.json" -PathType leaf)) {
     write-host "Configuration file not found"
     write-host "Ensure MigrationConfig.json is in the current folder"
     exit
 }
 $Config = get-content ".\MigrationConfig.json" | convertfrom-json
+$CustomerShortName = $Config.CustomerShortName
+$ErrorLogBaseName = "ErrorLog" + $CustomerShortName
+$LogName = "Log" + $CustomerShortName + ".txt"
 $OldPrimarySMTP = $Config.OldPrimarySMTP
 $NewPrimarySMTP = $Config.NewPrimarySMTP
 $SMTPRegex = "*@" + $OldPrimarySMTP
 $MailBoxes = get-RemoteMailbox -Resultsize unlimited | Where-Object {$_.PrimarySMTPAddress -like $SMTPRegex}
 Write-host "Found " $MailBoxes.count
+Add-Content -Path $LogName -Value ("Mailboxes found " + $Mailboxes.count)
 #
-$MailBoxes | select Name,primarySMTPAddress,alias | export-csv -notypeinformation -path "ChangePrimarySMTPList.csv"
+$MailBoxes | Select-Object Name,primarySMTPAddress,alias | export-csv -notypeinformation -path "ChangePrimarySMTPList.csv"
 #
 #
 foreach ($mailbox in $MailBoxes) {
@@ -31,4 +35,4 @@ foreach ($mailbox in $MailBoxes) {
         $errlist += $mailbox
     }
 }
-$errlist | export-csv -notypeinformation -path "PSMTPERR.csv"
+$errlist | export-csv -notypeinformation -path ($ErrorLogBaseName + ".csv")

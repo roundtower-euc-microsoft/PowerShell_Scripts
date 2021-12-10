@@ -1,4 +1,6 @@
 {
+    "CustomerLongName":"The Customer Name",
+    "CustomerShortName":"CSN",
     "OldTenantName":"OldTenant",
     "NewTenantName":"NewTenant",
     "OldTenantDomain":"OldTenant.OnMicrosoft.com",
