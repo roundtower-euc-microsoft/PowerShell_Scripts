@@ -1,5 +1,5 @@
 ﻿#Get all Mailboxes into temp variable
-$Mailboxes = Import-CSV D:\desktop\AgroMailboxes.csv
+$Mailboxes = Get-Mailbox -ResultSize Unlimited
 
 #Delegates Reports
 forEach ($mailbox in $mailboxes)
