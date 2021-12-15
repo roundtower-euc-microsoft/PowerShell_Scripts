@@ -2,13 +2,14 @@
 #
 #
 $errlist = @()
+$ConfigPath = ".\MigrationConfig.json"
 #
-if($False -eq (Test-path -path ".\MigrationConfig.json" -PathType leaf)) {
+if($False -eq (Test-path -path $ConfigPath -PathType leaf)) {
     write-host "Configuration file not found"
     write-host "Ensure MigrationConfig.json is in the current folder"
     exit
 }
-$Config = get-content ".\MigrationConfig.json" | convertfrom-json
+$Config = get-content $ConfigPath | convertfrom-json
 $CustomerShortName = $Config.CustomerShortName
 $ErrorLogBaseName = "ErrorLog" + $CustomerShortName
 $LogName = "Log" + $CustomerShortName + ".txt"
