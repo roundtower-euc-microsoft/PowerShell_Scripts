@@ -1,4 +1,56 @@
-﻿
+﻿<#
+Example of use:
+
+Import-DeviceEnrollmentRestrictions -DEC_Id $PlatformRestrictions -JSON $JSON
+
+Sample JSON:
+
+{
+    "@odata.type":"#microsoft.graph.deviceEnrollmentPlatformRestrictionsConfiguration",
+    "displayName":"Standard Users",
+    "description":"This is the Standard Device Type Restriction applied to typical licensed users.",
+
+    "androidRestriction":{
+    "platformBlocked":true,
+    "personalDeviceEnrollmentBlocked":true,
+    "osMinimumVersion":"",
+    "osMaximumVersion":""
+    },
+    "androidForWorkRestriction":{
+    "platformBlocked":false,
+    "personalDeviceEnrollmentBlocked":false,
+    "osMinimumVersion":null,
+    "osMaximumVersion":null
+    },
+    "iosRestriction":{
+    "platformBlocked":false,
+    "personalDeviceEnrollmentBlocked":false,
+    "osMinimumVersion":"",
+    "osMaximumVersion":""
+    },
+    "macRestriction":{
+    "platformBlocked":false,
+    "personalDeviceEnrollmentBlocked":false,
+    "osMinimumVersion":null,
+    "osMaximumVersion":null
+    },
+    "windowsRestriction":{
+    "platformBlocked":false,
+    "personalDeviceEnrollmentBlocked":false,
+    "osMinimumVersion":"",
+    "osMaximumVersion":""
+    },
+    "windowsMobileRestriction":{
+    "platformBlocked":false,
+    "personalDeviceEnrollmentBlocked":false,
+    "osMinimumVersion":"",
+    "osMaximumVersion":""
+    }
+
+}
+
+#>
+
 <#
 
 .COPYRIGHT
@@ -149,6 +201,122 @@ $authority = "https://login.microsoftonline.com/$Tenant"
 
 ####################################################
 
+Function Get-DeviceEnrollmentConfigurations(){
+    
+<#
+.SYNOPSIS
+This function is used to get Deivce Enrollment Configurations from the Graph API REST interface
+.DESCRIPTION
+The function connects to the Graph API Interface and gets Device Enrollment Configurations
+.EXAMPLE
+Get-DeviceEnrollmentConfigurations
+Returns Device Enrollment Configurations configured in Intune
+.NOTES
+NAME: Get-DeviceEnrollmentConfigurations
+#>
+    
+[cmdletbinding()]
+    
+$graphApiVersion = "Beta"
+$Resource = "deviceManagement/deviceEnrollmentConfigurations"
+        
+    try {
+            
+    $uri = "https://graph.microsoft.com/$graphApiVersion/$($Resource)"
+    (Invoke-RestMethod -Uri $uri -Headers $authToken -Method Get).Value
+    
+    }
+        
+    catch {
+    
+    $ex = $_.Exception
+    $errorResponse = $ex.Response.GetResponseStream()
+    $reader = New-Object System.IO.StreamReader($errorResponse)
+    $reader.BaseStream.Position = 0
+    $reader.DiscardBufferedData()
+    $responseBody = $reader.ReadToEnd();
+    Write-Host "Response content:`n$responseBody" -f Red
+    Write-Error "Request to $Uri failed with HTTP Status $($ex.Response.StatusCode) $($ex.Response.StatusDescription)"
+    write-host
+    break
+    
+    }
+    
+}
+
+####################################################
+    
+Function Set-DeviceEnrollmentConfiguration(){
+    
+<#
+.SYNOPSIS
+This function is used to set the Device Enrollment Configuration resource using the Graph API REST interface
+.DESCRIPTION
+The function connects to the Graph API Interface and sets the Device Enrollment Configuration Resource
+.EXAMPLE
+Set-DeviceEnrollmentConfiguration -DEC_Id $DEC_Id -JSON $JSON
+Sets the Device Enrollment Configuration using Graph API
+.NOTES
+NAME: Set-DeviceEnrollmentConfiguration
+#>
+    
+[cmdletbinding()]
+    
+param
+(
+    $JSON,
+    $DEC_Id
+)
+    
+$graphApiVersion = "Beta"
+$App_resource = "deviceManagement/deviceEnrollmentConfigurations"
+        
+    try {
+    
+        if(!$JSON){
+    
+        write-host "No JSON was passed to the function, provide a JSON variable" -f Red
+        break
+    
+        }
+    
+        elseif(!$DEC_Id){
+    
+        write-host "No Device Enrollment Configuration ID was passed to the function, provide a Device Enrollment Configuration ID" -f Red
+        break
+    
+        }
+    
+        else {
+    
+        Test-JSON -JSON $JSON
+        
+        $uri = "https://graph.microsoft.com/$graphApiVersion/$($App_resource)/$DEC_Id"
+        Invoke-RestMethod -Uri $uri -Method Patch -ContentType "application/json" -Body $JSON -Headers $authToken
+    
+        }
+        
+    }
+        
+    catch {
+    
+    $ex = $_.Exception
+    $errorResponse = $ex.Response.GetResponseStream()
+    $reader = New-Object System.IO.StreamReader($errorResponse)
+    $reader.BaseStream.Position = 0
+    $reader.DiscardBufferedData()
+    $responseBody = $reader.ReadToEnd();
+    Write-Host "Response content:`n$responseBody" -f Red
+    Write-Error "Request to $Uri failed with HTTP Status $($ex.Response.StatusCode) $($ex.Response.StatusDescription)"
+    write-host
+    break
+    
+    }
+    
+}
+
+####################################################
+
 Function Test-JSON(){
 
 <#
@@ -160,7 +328,7 @@ The function tests if the JSON passed to the REST Post is valid
 Test-JSON -JSON $JSON
 Test if the JSON is valid before calling the Graph REST interface
 .NOTES
-NAME: Test-JSON
+NAME: Test-AuthHeader
 #>
 
 param (
@@ -184,70 +352,8 @@ $JSON
     }
 
     if (!$validJson){
-    
+
     Write-Host "Provided JSON isn't in valid JSON format" -f Red
-    break
-
-    }
-
-}
-
-####################################################
-
-Function Add-DeviceCompliancePolicy(){
-
-<#
-.SYNOPSIS
-This function is used to add a device compliance policy using the Graph API REST interface
-.DESCRIPTION
-The function connects to the Graph API Interface and adds a device compliance policy
-.EXAMPLE
-Add-DeviceCompliancePolicy -JSON $JSON
-Adds an iOS device compliance policy in Intune
-.NOTES
-NAME: Add-DeviceCompliancePolicy
-#>
-
-[cmdletbinding()]
-
-param
-(
-    $JSON
-)
-
-$graphApiVersion = "Beta"
-$Resource = "deviceManagement/deviceCompliancePolicies"
-    
-    try {
-
-        if($JSON -eq "" -or $JSON -eq $null){
-
-        write-host "No JSON specified, please specify valid JSON for the iOS Policy..." -f Red
-
-        }
-
-        else {
-
-        Test-JSON -JSON $JSON
-
-        $uri = "https://graph.microsoft.com/$graphApiVersion/$($Resource)"
-        Invoke-RestMethod -Uri $uri -Headers $authToken -Method Post -Body $JSON -ContentType "application/json"
-
-        }
-
-    }
-    
-    catch {
-
-    $ex = $_.Exception
-    $errorResponse = $ex.Response.GetResponseStream()
-    $reader = New-Object System.IO.StreamReader($errorResponse)
-    $reader.BaseStream.Position = 0
-    $reader.DiscardBufferedData()
-    $responseBody = $reader.ReadToEnd();
-    Write-Host "Response content:`n$responseBody" -f Red
-    Write-Error "Request to $Uri failed with HTTP Status $($ex.Response.StatusCode) $($ex.Response.StatusDescription)"
-    write-host
     break
 
     }
@@ -308,44 +414,58 @@ $global:authToken = Get-AuthToken -User $User
 
 ####################################################
 
-$ImportPath = Read-Host -Prompt "Please specify a path to a JSON file to import data from e.g. C:\IntuneOutput\Policies\policy.json"
+$JSON = @"
 
-# Replacing quotes for Test-Path
-$ImportPath = $ImportPath.replace('"','')
+{
+    "@odata.type":"#microsoft.graph.deviceEnrollmentPlatformRestrictionsConfiguration",
+    "displayName":"All Users",
+    "description":"This is the default Device Type Restriction applied with the lowest priority to all users regardless of group membership.",
 
-if(!(Test-Path "$ImportPath")){
-
-Write-Host "Import Path for JSON file doesn't exist..." -ForegroundColor Red
-Write-Host "Script can't continue..." -ForegroundColor Red
-Write-Host
-break
+    "androidRestriction":{
+    "platformBlocked":false,
+    "personalDeviceEnrollmentBlocked":false,
+    "osMinimumVersion":"",
+    "osMaximumVersion":""
+    },
+    "androidForWorkRestriction":{
+    "platformBlocked":false,
+    "personalDeviceEnrollmentBlocked":false,
+    "osMinimumVersion":null,
+    "osMaximumVersion":null
+    },
+    "iosRestriction":{
+    "platformBlocked":false,
+    "personalDeviceEnrollmentBlocked":false,
+    "osMinimumVersion":"",
+    "osMaximumVersion":""
+    },
+    "macRestriction":{
+    "platformBlocked":false,
+    "personalDeviceEnrollmentBlocked":false,
+    "osMinimumVersion":null,
+    "osMaximumVersion":null
+    },
+    "windowsRestriction":{
+    "platformBlocked":false,
+    "personalDeviceEnrollmentBlocked":false,
+    "osMinimumVersion":"",
+    "osMaximumVersion":""
+    },
+    "windowsMobileRestriction":{
+    "platformBlocked":false,
+    "personalDeviceEnrollmentBlocked":false,
+    "osMinimumVersion":"",
+    "osMaximumVersion":""
+    }
 
 }
 
-$JSON_Data = gc "$ImportPath"
+"@
 
-# Excluding entries that are not required - id,createdDateTime,lastModifiedDateTime,version
-$JSON_Convert = $JSON_Data | ConvertFrom-Json | Select-Object -Property * -ExcludeProperty id,createdDateTime,lastModifiedDateTime,version
+####################################################
 
-$DisplayName = $JSON_Convert.displayName
+$DeviceEnrollmentConfigurations = Get-DeviceEnrollmentConfigurations
 
-$JSON_Output = $JSON_Convert | ConvertTo-Json -Depth 5
+$PlatformRestrictions = ($DeviceEnrollmentConfigurations | Where-Object { ($_.id).contains("DefaultPlatformRestrictions") }).id
 
-# Adding Scheduled Actions Rule to JSON
-$scheduledActionsForRule = '"scheduledActionsForRule":[{"ruleName":"PasswordRequired","scheduledActionConfigurations":[{"actionType":"block","gracePeriodHours":0,"notificationTemplateId":"","notificationMessageCCList":[]}]}]'        
-
-$JSON_Output = $JSON_Output.trimend("}")
-
-$JSON_Output = $JSON_Output.TrimEnd() + "," + "`r`n"
-
-# Joining the JSON together
-$JSON_Output = $JSON_Output + $scheduledActionsForRule + "`r`n" + "}"
-            
-write-host
-write-host "Compliance Policy '$DisplayName' Found..." -ForegroundColor Yellow
-write-host
-$JSON_Output
-write-host
-Write-Host "Adding Compliance Policy '$DisplayName'" -ForegroundColor Yellow
-Add-DeviceCompliancePolicy -JSON $JSON_Output
-        
+Set-DeviceEnrollmentConfiguration -DEC_Id $PlatformRestrictions -JSON $JSON

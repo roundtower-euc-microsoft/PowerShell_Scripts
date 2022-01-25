@@ -149,92 +149,30 @@ $authority = "https://login.microsoftonline.com/$Tenant"
 
 ####################################################
 
-Function Test-JSON(){
+Function Get-DeviceConfigurationPolicy(){
 
 <#
 .SYNOPSIS
-This function is used to test if the JSON passed to a REST Post request is valid
+This function is used to get device configuration policies from the Graph API REST interface
 .DESCRIPTION
-The function tests if the JSON passed to the REST Post is valid
+The function connects to the Graph API Interface and gets any device configuration policies
 .EXAMPLE
-Test-JSON -JSON $JSON
-Test if the JSON is valid before calling the Graph REST interface
+Get-DeviceConfigurationPolicy
+Returns any device configuration policies configured in Intune
 .NOTES
-NAME: Test-JSON
-#>
-
-param (
-
-$JSON
-
-)
-
-    try {
-
-    $TestJSON = ConvertFrom-Json $JSON -ErrorAction Stop
-    $validJson = $true
-
-    }
-
-    catch {
-
-    $validJson = $false
-    $_.Exception
-
-    }
-
-    if (!$validJson){
-    
-    Write-Host "Provided JSON isn't in valid JSON format" -f Red
-    break
-
-    }
-
-}
-
-####################################################
-
-Function Add-DeviceCompliancePolicy(){
-
-<#
-.SYNOPSIS
-This function is used to add a device compliance policy using the Graph API REST interface
-.DESCRIPTION
-The function connects to the Graph API Interface and adds a device compliance policy
-.EXAMPLE
-Add-DeviceCompliancePolicy -JSON $JSON
-Adds an iOS device compliance policy in Intune
-.NOTES
-NAME: Add-DeviceCompliancePolicy
+NAME: Get-DeviceConfigurationPolicy
 #>
 
 [cmdletbinding()]
 
-param
-(
-    $JSON
-)
-
 $graphApiVersion = "Beta"
-$Resource = "deviceManagement/deviceCompliancePolicies"
+$DCP_resource = "deviceManagement/deviceConfigurations"
     
     try {
-
-        if($JSON -eq "" -or $JSON -eq $null){
-
-        write-host "No JSON specified, please specify valid JSON for the iOS Policy..." -f Red
-
-        }
-
-        else {
-
-        Test-JSON -JSON $JSON
-
-        $uri = "https://graph.microsoft.com/$graphApiVersion/$($Resource)"
-        Invoke-RestMethod -Uri $uri -Headers $authToken -Method Post -Body $JSON -ContentType "application/json"
-
-        }
-
+    
+    $uri = "https://graph.microsoft.com/$graphApiVersion/$($DCP_resource)"
+    (Invoke-RestMethod -Uri $uri -Headers $authToken -Method Get).Value
+    
     }
     
     catch {
@@ -249,6 +187,79 @@ $Resource = "deviceManagement/deviceCompliancePolicies"
     Write-Error "Request to $Uri failed with HTTP Status $($ex.Response.StatusCode) $($ex.Response.StatusDescription)"
     write-host
     break
+
+    }
+
+}
+
+####################################################
+
+Function Export-JSONData(){
+
+<#
+.SYNOPSIS
+This function is used to export JSON data returned from Graph
+.DESCRIPTION
+This function is used to export JSON data returned from Graph
+.EXAMPLE
+Export-JSONData -JSON $JSON
+Export the JSON inputted on the function
+.NOTES
+NAME: Export-JSONData
+#>
+
+param (
+
+$JSON,
+$ExportPath
+
+)
+
+    try {
+
+        if($JSON -eq "" -or $JSON -eq $null){
+
+            write-host "No JSON specified, please specify valid JSON..." -f Red
+
+        }
+
+        elseif(!$ExportPath){
+
+            write-host "No export path parameter set, please provide a path to export the file" -f Red
+
+        }
+
+        elseif(!(Test-Path $ExportPath)){
+
+            write-host "$ExportPath doesn't exist, can't export JSON Data" -f Red
+
+        }
+
+        else {
+
+            $JSON1 = ConvertTo-Json $JSON -Depth 5
+
+            $JSON_Convert = $JSON1 | ConvertFrom-Json
+
+            $displayName = $JSON_Convert.displayName
+
+            # Updating display name to follow file naming conventions - https://msdn.microsoft.com/en-us/library/windows/desktop/aa365247%28v=vs.85%29.aspx
+            $DisplayName = $DisplayName -replace '\<|\>|:|"|/|\\|\||\?|\*', "_"
+
+            $FileName_JSON = "$DisplayName" + "_" + $(get-date -f dd-MM-yyyy-H-mm-ss) + ".json"
+
+            write-host "Export Path:" "$ExportPath"
+
+            $JSON1 | Set-Content -LiteralPath "$ExportPath\$FileName_JSON"
+            write-host "JSON created in $ExportPath\$FileName_JSON..." -f cyan
+            
+        }
+
+    }
+
+    catch {
+
+    $_.Exception
 
     }
 
@@ -308,44 +319,47 @@ $global:authToken = Get-AuthToken -User $User
 
 ####################################################
 
-$ImportPath = Read-Host -Prompt "Please specify a path to a JSON file to import data from e.g. C:\IntuneOutput\Policies\policy.json"
+$ExportPath = Read-Host -Prompt "Please specify a path to export the policy data to e.g. C:\IntuneOutput"
 
-# Replacing quotes for Test-Path
-$ImportPath = $ImportPath.replace('"','')
+    # If the directory path doesn't exist prompt user to create the directory
+    $ExportPath = $ExportPath.replace('"','')
 
-if(!(Test-Path "$ImportPath")){
+    if(!(Test-Path "$ExportPath")){
 
-Write-Host "Import Path for JSON file doesn't exist..." -ForegroundColor Red
-Write-Host "Script can't continue..." -ForegroundColor Red
+    Write-Host
+    Write-Host "Path '$ExportPath' doesn't exist, do you want to create this directory? Y or N?" -ForegroundColor Yellow
+
+    $Confirm = read-host
+
+        if($Confirm -eq "y" -or $Confirm -eq "Y"){
+
+        new-item -ItemType Directory -Path "$ExportPath" | Out-Null
+        Write-Host
+
+        }
+
+        else {
+
+        Write-Host "Creation of directory path was cancelled..." -ForegroundColor Red
+        Write-Host
+        break
+
+        }
+
+    }
+
+####################################################
+
 Write-Host
-break
+
+# Filtering out iOS and Windows Software Update Policies
+$DCPs = Get-DeviceConfigurationPolicy | Where-Object { ($_.'@odata.type' -ne "#microsoft.graph.iosUpdateConfiguration") -and ($_.'@odata.type' -ne "#microsoft.graph.windowsUpdateForBusinessConfiguration") }
+foreach($DCP in $DCPs){
+
+write-host "Device Configuration Policy:"$DCP.displayName -f Yellow
+Export-JSONData -JSON $DCP -ExportPath "$ExportPath"
+Write-Host
 
 }
 
-$JSON_Data = gc "$ImportPath"
-
-# Excluding entries that are not required - id,createdDateTime,lastModifiedDateTime,version
-$JSON_Convert = $JSON_Data | ConvertFrom-Json | Select-Object -Property * -ExcludeProperty id,createdDateTime,lastModifiedDateTime,version
-
-$DisplayName = $JSON_Convert.displayName
-
-$JSON_Output = $JSON_Convert | ConvertTo-Json -Depth 5
-
-# Adding Scheduled Actions Rule to JSON
-$scheduledActionsForRule = '"scheduledActionsForRule":[{"ruleName":"PasswordRequired","scheduledActionConfigurations":[{"actionType":"block","gracePeriodHours":0,"notificationTemplateId":"","notificationMessageCCList":[]}]}]'        
-
-$JSON_Output = $JSON_Output.trimend("}")
-
-$JSON_Output = $JSON_Output.TrimEnd() + "," + "`r`n"
-
-# Joining the JSON together
-$JSON_Output = $JSON_Output + $scheduledActionsForRule + "`r`n" + "}"
-            
-write-host
-write-host "Compliance Policy '$DisplayName' Found..." -ForegroundColor Yellow
-write-host
-$JSON_Output
-write-host
-Write-Host "Adding Compliance Policy '$DisplayName'" -ForegroundColor Yellow
-Add-DeviceCompliancePolicy -JSON $JSON_Output
-        
+Write-Host

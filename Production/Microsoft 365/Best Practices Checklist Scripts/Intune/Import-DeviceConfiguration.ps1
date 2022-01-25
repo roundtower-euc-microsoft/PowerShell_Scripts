@@ -149,6 +149,69 @@ $authority = "https://login.microsoftonline.com/$Tenant"
 
 ####################################################
 
+Function Add-DeviceConfigurationPolicy(){
+
+<#
+.SYNOPSIS
+This function is used to add an device configuration policy using the Graph API REST interface
+.DESCRIPTION
+The function connects to the Graph API Interface and adds a device configuration policy
+.EXAMPLE
+Add-DeviceConfigurationPolicy -JSON $JSON
+Adds a device configuration policy in Intune
+.NOTES
+NAME: Add-DeviceConfigurationPolicy
+#>
+
+[cmdletbinding()]
+
+param
+(
+    $JSON
+)
+
+$graphApiVersion = "Beta"
+$DCP_resource = "deviceManagement/deviceConfigurations"
+Write-Verbose "Resource: $DCP_resource"
+
+    try {
+
+        if($JSON -eq "" -or $JSON -eq $null){
+
+        write-host "No JSON specified, please specify valid JSON for the Device Configuration Policy..." -f Red
+
+        }
+
+        else {
+
+        Test-JSON -JSON $JSON
+
+        $uri = "https://graph.microsoft.com/$graphApiVersion/$($DCP_resource)"
+        Invoke-RestMethod -Uri $uri -Headers $authToken -Method Post -Body $JSON -ContentType "application/json"
+
+        }
+
+    }
+    
+    catch {
+
+    $ex = $_.Exception
+    $errorResponse = $ex.Response.GetResponseStream()
+    $reader = New-Object System.IO.StreamReader($errorResponse)
+    $reader.BaseStream.Position = 0
+    $reader.DiscardBufferedData()
+    $responseBody = $reader.ReadToEnd();
+    Write-Host "Response content:`n$responseBody" -f Red
+    Write-Error "Request to $Uri failed with HTTP Status $($ex.Response.StatusCode) $($ex.Response.StatusDescription)"
+    write-host
+    break
+
+    }
+
+}
+
+####################################################
+
 Function Test-JSON(){
 
 <#
@@ -160,7 +223,7 @@ The function tests if the JSON passed to the REST Post is valid
 Test-JSON -JSON $JSON
 Test if the JSON is valid before calling the Graph REST interface
 .NOTES
-NAME: Test-JSON
+NAME: Test-AuthHeader
 #>
 
 param (
@@ -186,68 +249,6 @@ $JSON
     if (!$validJson){
     
     Write-Host "Provided JSON isn't in valid JSON format" -f Red
-    break
-
-    }
-
-}
-
-####################################################
-
-Function Add-DeviceCompliancePolicy(){
-
-<#
-.SYNOPSIS
-This function is used to add a device compliance policy using the Graph API REST interface
-.DESCRIPTION
-The function connects to the Graph API Interface and adds a device compliance policy
-.EXAMPLE
-Add-DeviceCompliancePolicy -JSON $JSON
-Adds an iOS device compliance policy in Intune
-.NOTES
-NAME: Add-DeviceCompliancePolicy
-#>
-
-[cmdletbinding()]
-
-param
-(
-    $JSON
-)
-
-$graphApiVersion = "Beta"
-$Resource = "deviceManagement/deviceCompliancePolicies"
-    
-    try {
-
-        if($JSON -eq "" -or $JSON -eq $null){
-
-        write-host "No JSON specified, please specify valid JSON for the iOS Policy..." -f Red
-
-        }
-
-        else {
-
-        Test-JSON -JSON $JSON
-
-        $uri = "https://graph.microsoft.com/$graphApiVersion/$($Resource)"
-        Invoke-RestMethod -Uri $uri -Headers $authToken -Method Post -Body $JSON -ContentType "application/json"
-
-        }
-
-    }
-    
-    catch {
-
-    $ex = $_.Exception
-    $errorResponse = $ex.Response.GetResponseStream()
-    $reader = New-Object System.IO.StreamReader($errorResponse)
-    $reader.BaseStream.Position = 0
-    $reader.DiscardBufferedData()
-    $responseBody = $reader.ReadToEnd();
-    Write-Host "Response content:`n$responseBody" -f Red
-    Write-Error "Request to $Uri failed with HTTP Status $($ex.Response.StatusCode) $($ex.Response.StatusDescription)"
-    write-host
     break
 
     }
@@ -322,30 +323,21 @@ break
 
 }
 
+####################################################
+
 $JSON_Data = gc "$ImportPath"
 
 # Excluding entries that are not required - id,createdDateTime,lastModifiedDateTime,version
-$JSON_Convert = $JSON_Data | ConvertFrom-Json | Select-Object -Property * -ExcludeProperty id,createdDateTime,lastModifiedDateTime,version
+$JSON_Convert = $JSON_Data | ConvertFrom-Json | Select-Object -Property * -ExcludeProperty id,createdDateTime,lastModifiedDateTime,version,supportsScopeTags
 
 $DisplayName = $JSON_Convert.displayName
 
 $JSON_Output = $JSON_Convert | ConvertTo-Json -Depth 5
-
-# Adding Scheduled Actions Rule to JSON
-$scheduledActionsForRule = '"scheduledActionsForRule":[{"ruleName":"PasswordRequired","scheduledActionConfigurations":[{"actionType":"block","gracePeriodHours":0,"notificationTemplateId":"","notificationMessageCCList":[]}]}]'        
-
-$JSON_Output = $JSON_Output.trimend("}")
-
-$JSON_Output = $JSON_Output.TrimEnd() + "," + "`r`n"
-
-# Joining the JSON together
-$JSON_Output = $JSON_Output + $scheduledActionsForRule + "`r`n" + "}"
             
 write-host
-write-host "Compliance Policy '$DisplayName' Found..." -ForegroundColor Yellow
+write-host "Device Configuration Policy '$DisplayName' Found..." -ForegroundColor Yellow
 write-host
 $JSON_Output
 write-host
-Write-Host "Adding Compliance Policy '$DisplayName'" -ForegroundColor Yellow
-Add-DeviceCompliancePolicy -JSON $JSON_Output
-        
+Write-Host "Adding Device Configuration Policy '$DisplayName'" -ForegroundColor Yellow
+Add-DeviceConfigurationPolicy -JSON $JSON_Output

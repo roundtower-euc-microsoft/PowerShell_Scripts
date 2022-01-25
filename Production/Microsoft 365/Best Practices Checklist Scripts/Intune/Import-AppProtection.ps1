@@ -194,18 +194,18 @@ $JSON
 
 ####################################################
 
-Function Add-DeviceCompliancePolicy(){
+Function Add-ManagedAppPolicy(){
 
 <#
 .SYNOPSIS
-This function is used to add a device compliance policy using the Graph API REST interface
+This function is used to add an Managed App policy using the Graph API REST interface
 .DESCRIPTION
-The function connects to the Graph API Interface and adds a device compliance policy
+The function connects to the Graph API Interface and adds a Managed App policy
 .EXAMPLE
-Add-DeviceCompliancePolicy -JSON $JSON
-Adds an iOS device compliance policy in Intune
+Add-ManagedAppPolicy -JSON $JSON
+Adds a Managed App policy in Intune
 .NOTES
-NAME: Add-DeviceCompliancePolicy
+NAME: Add-ManagedAppPolicy
 #>
 
 [cmdletbinding()]
@@ -216,13 +216,13 @@ param
 )
 
 $graphApiVersion = "Beta"
-$Resource = "deviceManagement/deviceCompliancePolicies"
-    
+$Resource = "deviceAppManagement/managedAppPolicies"
+
     try {
 
         if($JSON -eq "" -or $JSON -eq $null){
 
-        write-host "No JSON specified, please specify valid JSON for the iOS Policy..." -f Red
+        write-host "No JSON specified, please specify valid JSON for a Managed App Policy..." -f Red
 
         }
 
@@ -236,9 +236,10 @@ $Resource = "deviceManagement/deviceCompliancePolicies"
         }
 
     }
-    
+
     catch {
 
+    Write-Host
     $ex = $_.Exception
     $errorResponse = $ex.Response.GetResponseStream()
     $reader = New-Object System.IO.StreamReader($errorResponse)
@@ -322,30 +323,26 @@ break
 
 }
 
+####################################################
+
 $JSON_Data = gc "$ImportPath"
 
 # Excluding entries that are not required - id,createdDateTime,lastModifiedDateTime,version
-$JSON_Convert = $JSON_Data | ConvertFrom-Json | Select-Object -Property * -ExcludeProperty id,createdDateTime,lastModifiedDateTime,version
+$JSON_Convert = $JSON_Data | ConvertFrom-Json | Select-Object -Property * -ExcludeProperty id,createdDateTime,lastModifiedDateTime,version,"@odata.context",apps@odata.context,deployedAppCount
+
+$JSON_Apps = $JSON_Convert.apps | select * -ExcludeProperty id,version
+
+$JSON_Convert | Add-Member -MemberType NoteProperty -Name 'apps' -Value @($JSON_Apps) -Force
 
 $DisplayName = $JSON_Convert.displayName
 
 $JSON_Output = $JSON_Convert | ConvertTo-Json -Depth 5
-
-# Adding Scheduled Actions Rule to JSON
-$scheduledActionsForRule = '"scheduledActionsForRule":[{"ruleName":"PasswordRequired","scheduledActionConfigurations":[{"actionType":"block","gracePeriodHours":0,"notificationTemplateId":"","notificationMessageCCList":[]}]}]'        
-
-$JSON_Output = $JSON_Output.trimend("}")
-
-$JSON_Output = $JSON_Output.TrimEnd() + "," + "`r`n"
-
-# Joining the JSON together
-$JSON_Output = $JSON_Output + $scheduledActionsForRule + "`r`n" + "}"
             
 write-host
-write-host "Compliance Policy '$DisplayName' Found..." -ForegroundColor Yellow
+write-host "App Protection Policy '$DisplayName' Found..." -ForegroundColor Cyan
 write-host
 $JSON_Output
-write-host
-Write-Host "Adding Compliance Policy '$DisplayName'" -ForegroundColor Yellow
-Add-DeviceCompliancePolicy -JSON $JSON_Output
+Write-Host
+Write-Host "Adding App Protection Policy '$DisplayName'" -ForegroundColor Yellow
+Add-ManagedAppPolicy -JSON $JSON_Output
         
