@@ -8,22 +8,14 @@ https://github.com/microsoftgraph/powershell-intune-samples
 
 .NOTES
     FileName:    Setup-Intune.ps1
-    Author:      Corey St. Pierre, Ahead, LLC
+    Author:      Corey St. Pierre
 	Based on:    Per Larsen / Frank Simorjay
     Created:     August 2020
-	Revised:     January 2022
-    Version:     4.1 
+	Revised:     October 2020
+    Version:     4.0 
     
 #>
 ###################################################################################################
-<#
-
-.COPYRIGHT
-Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
-See LICENSE in the project root for license information.
-
-#>
-
 ####################################################
 
 function Get-AuthToken {
@@ -2939,18 +2931,18 @@ $BaselineWin10 = @"
     "bitLockerEnabled":  false,
     "secureBootEnabled":  false,
     "codeIntegrityEnabled":  false,
-    "storageRequireEncryption":  true,
-    "activeFirewallRequired":  true,
-    "defenderEnabled":  true,
+    "storageRequireEncryption":  false,
+    "activeFirewallRequired":  false,
+    "defenderEnabled":  false,
     "defenderVersion":  null,
     "signatureOutOfDate":  false,
-    "rtpEnabled":  true,
-    "antivirusRequired":  true,
-    "antiSpywareRequired":  true,
+    "rtpEnabled":  false,
+    "antivirusRequired":  false,
+    "antiSpywareRequired":  false,
     "deviceThreatProtectionEnabled":  false,
     "deviceThreatProtectionRequiredSecurityLevel":  "unavailable",
     "configurationManagerComplianceRequired":  false,
-    "tpmRequired":  true,
+    "tpmRequired":  false,
     "validOperatingSystemBuildRanges":  [
 
                                         ],
@@ -2966,11 +2958,11 @@ $BaselineiOS = @"
 
 {
     "@odata.type":  "#microsoft.graph.iosCompliancePolicy",
-    "description":  "Block jailbroken iOS/iPadOS devices, and require 6 digit PIN",
+    "description":  "Block jailbroken devices, require PIN",
     "displayName":  "iOS/iPadOS Baseline",
     "passcodeBlockSimple":  true,
     "passcodeExpirationDays":  null,
-    "passcodeMinimumLength":  6,
+    "passcodeMinimumLength":  4,
     "passcodeMinutesOfInactivityBeforeLock":  0,
     "passcodeMinutesOfInactivityBeforeScreenTimeout":  5,
     "passcodePreviousPasscodeBlockCount":  null,
@@ -3000,10 +2992,10 @@ $BaselineAndroidLegacy = @"
 
 {
     "@odata.type":  "#microsoft.graph.androidCompliancePolicy",
-    "description":  "Use this policy if you are not ready to implement Android Enterprise",
-    "displayName":  "(ALLOW) Legacy Android Device Administrator Baseline",
+    "description":  "PIN, encryption, integrity",
+    "displayName":  "Android Legacy Baseline",
     "passwordRequired":  true,
-    "passwordMinimumLength":  6,
+    "passwordMinimumLength":  4,
     "passwordRequiredType":  "numeric",
     "passwordMinutesOfInactivityBeforeLock":  5,
     "passwordExpirationDays":  null,
@@ -3038,54 +3030,12 @@ $BaselineAndroidLegacy = @"
 
 ####################################################
 
-$BLOCKAndroidLegacy = @"
-{
-    "@odata.type":  "#microsoft.graph.androidCompliancePolicy",
-    "description":  "Use this policy to block legacy device administrator and move to Android Enterprise",
-    "displayName":  "(BLOCK) Legacy Android Device Administrator",
-    "passwordRequired":  false,
-    "passwordMinimumLength":  null,
-    "passwordRequiredType":  "deviceDefault",
-    "requiredPasswordComplexity":  "none",
-    "passwordMinutesOfInactivityBeforeLock":  null,
-    "passwordExpirationDays":  null,
-    "passwordPreviousPasswordBlockCount":  null,
-    "passwordSignInFailureCountBeforeFactoryReset":  null,
-    "securityPreventInstallAppsFromUnknownSources":  false,
-    "securityDisableUsbDebugging":  false,
-    "securityRequireVerifyApps":  false,
-    "deviceThreatProtectionEnabled":  false,
-    "deviceThreatProtectionRequiredSecurityLevel":  "unavailable",
-    "advancedThreatProtectionRequiredSecurityLevel":  "unavailable",
-    "securityBlockJailbrokenDevices":  false,
-    "securityBlockDeviceAdministratorManagedDevices":  true,
-    "osMinimumVersion":  null,
-    "osMaximumVersion":  null,
-    "minAndroidSecurityPatchLevel":  null,
-    "storageRequireEncryption":  false,
-    "securityRequireSafetyNetAttestationBasicIntegrity":  false,
-    "securityRequireSafetyNetAttestationCertifiedDevice":  false,
-    "securityRequireGooglePlayServices":  false,
-    "securityRequireUpToDateSecurityProviders":  false,
-    "securityRequireCompanyPortalAppIntegrity":  false,
-    "conditionStatementId":  null,
-    "restrictedApps":  [
-
-                       ],
-"scheduledActionsForRule":[{"ruleName":"PasswordRequired","scheduledActionConfigurations":[{"actionType":"block","gracePeriodHours":72,"notificationTemplateId":"","notificationMessageCCList":[]}]}]
-}
-
-
-"@
-
-####################################################
-
 $BaselineAndroidOwner = @"
 
 {
     "@odata.type":  "#microsoft.graph.androidDeviceOwnerCompliancePolicy",
-    "description":  "Use this policy for company-owned Android Enterprise devices",
-    "displayName":  "Company-Owned Android Enterprise Baseline",
+    "description":  "PIN, encryption, integrity",
+    "displayName":  "Android Device Owner Baseline",
     "deviceThreatProtectionEnabled":  false,
     "deviceThreatProtectionRequiredSecurityLevel":  "unavailable",
     "advancedThreatProtectionRequiredSecurityLevel":  null,
@@ -3095,7 +3045,7 @@ $BaselineAndroidOwner = @"
     "osMaximumVersion":  null,
     "minAndroidSecurityPatchLevel":  null,
     "passwordRequired":  true,
-    "passwordMinimumLength":  6,
+    "passwordMinimumLength":  4,
     "passwordMinimumLetterCharacters":  null,
     "passwordMinimumLowerCaseCharacters":  null,
     "passwordMinimumNonLetterCharacters":  null,
@@ -3119,10 +3069,10 @@ $BaselineAndroidWork = @"
 
 {
     "@odata.type":  "#microsoft.graph.androidWorkProfileCompliancePolicy",
-    "description":  "Use this policy for BYOD Android Enterprise devices",
-    "displayName":  "BYOD Android Enterprise Work Profile Baseline",
+    "description":  "PIN, encryption, integrity",
+    "displayName":  "Android Work Profile Baseline",
     "passwordRequired":  true,
-    "passwordMinimumLength":  6,
+    "passwordMinimumLength":  4,
     "passwordRequiredType":  "numeric",
     "passwordMinutesOfInactivityBeforeLock":  5,
     "passwordExpirationDays":  null,
@@ -5029,7 +4979,7 @@ $Win10EP = @"
     "defenderExploitProtectionXml":  null,
     "defenderExploitProtectionXmlFileName":  null,
     "defenderSecurityCenterBlockExploitProtectionOverride":  false,
-    "appLockerApplicationControl":  "notConfigured",
+    "appLockerApplicationControl":  "enforceComponentsStoreAppsAndSmartlocker",
     "deviceGuardLocalSystemAuthorityCredentialGuardSettings":  "notConfigured",
     "deviceGuardEnableVirtualizationBasedSecurity":  false,
     "deviceGuardEnableSecureBootWithDMA":  false,
@@ -5736,36 +5686,26 @@ $ChrEdge = @"
 #Import JSON to create policies
 ####################################################
 
-$Answer = Read-Host "Do you want to import MAM policies for iOS and Android (Recommended)? Type Y or N and press Enter to continue"
-if ($Answer -eq 'y' -or $Answer -eq 'yes') {
-
 Write-Host "Adding MAM policies for mobile devices..." -ForegroundColor Yellow
 
 Add-ManagedAppPolicy -JSON $MAM_AndroidBase #OK
 Add-ManagedAppPolicy -JSON $MAM_iOSBase #OK
 
 Write-Host 
-} else 
-
-{ Write-Host "MAM policies will not be imported" -ForegroundColor Red
-Write-Host
-}
 
 ####################################################
 
-$Answer = Read-Host "Do you want to import MDM policies for iOS and Android? Type Y or N and press Enter to continue"
-if ($Answer -eq 'y' -or $Answer -eq 'yes') {
-Write-Host "Adding MDM compliance policies for mobile devices..." -ForegroundColor Yellow
+Write-Host "Adding MDM Compliance policies for mobile devices..." -ForegroundColor Yellow
 
-Add-DeviceCompliancePolicybaseline -JSON $BLOCKAndroidLegacy
-Add-DeviceCompliancePolicybaseline -JSON $BaselineAndroidLegacy 
-Add-DeviceCompliancePolicybaseline -JSON $BaselineAndroidOwner 
-Add-DeviceCompliancePolicybaseline -JSON $BaselineAndroidWork 
-Add-DeviceCompliancePolicybaseline -JSON $BaselineiOS 
+Add-DeviceCompliancePolicybaseline -JSON $BaselineAndroidLegacy #OK
+Add-DeviceCompliancePolicybaseline -JSON $BaselineAndroidOwner #OK
+Add-DeviceCompliancePolicybaseline -JSON $BaselineAndroidWork #OK
+Add-DeviceCompliancePolicybaseline -JSON $BaselineiOS #OK
 
-<#Write-Host
+Write-Host 
+####################################################
 
-Write-Host "Adding Configuration profiles for mobile devices..." -ForegroundColor Yellow
+#Write-Host "Adding Configuration profiles for mobile devices..." -ForegroundColor Yellow
 
 Add-DeviceConfigurationPolicy -JSON $iOSDR
 Add-DeviceConfigurationPolicy -JSON $AndroidLegacyDR
@@ -5773,50 +5713,28 @@ Add-DeviceConfigurationPolicy -JSON $AndroidWorkDR
 Add-DeviceConfigurationPolicy -JSON $AndroidOwnerDR
 
 #Write-Host
-#>
-
-Write-Host } else 
-
-{Write-Host "MDM policies for mobile will not be imported" -ForegroundColor Red
-Write-Host
-}
 ####################################################
 
-$Answer = Read-Host "Do you want to import the MDM policies for MacOS? Type Y or N and press Enter to continue"
-if ($Answer -eq 'y' -or $Answer -eq 'yes') {
-Add-DeviceCompliancePolicybaseline -Json $BaselineMacOS 
+#Write-Host "Adding Windows Information Protection policies..." -ForegroundColor Yellow
+
+Add-MDMWindowsInformationProtectionPolicy -JSON $APP_WIP_MDM #OK
+Add-WindowsInformationProtectionPolicy -JSON $APP_WIP_MAM #OK
+
+#Write-Host
+####################################################
+
+Write-Host "Adding Compliance policies for Windows and MacOS..." -ForegroundColor Yellow
+
+Add-DeviceCompliancePolicybaseline -Json $BaselineWin10 #OK
+Add-DeviceCompliancePolicybaseline -Json $BaselineMacOS #OK
+
 Write-Host 
-Write-Host "Adding Device configuration profiles for MacOS..." -ForegroundColor Yellow
+####################################################
+
+Write-Host "Adding Device configuration profiles..." -ForegroundColor Yellow
+
 Add-DeviceConfigurationPolicy -JSON $MacOSDR
 Add-DeviceConfigurationPolicy -JSON $MacOSEP
-Write-Host
-} else {Write-Host "MDM policies for MacOS will not be imported" -ForegroundColor Red
-Write-Host
-}
-####################################################
-
-$Answer = Read-Host "Do you want to import WIP policies for Windows 10 (Optional)? Type Y or N and press Enter to continue"
-if ($Answer -eq 'y' -or $Answer -eq 'yes') {
-
-Write-Host "Adding Windows Information Protection policies..." -ForegroundColor Yellow
-
-Add-MDMWindowsInformationProtectionPolicy -JSON $APP_WIP_MDM 
-Add-WindowsInformationProtectionPolicy -JSON $APP_WIP_MAM 
-
-Write-Host
-} else { Write-Host "Windows Information Protection policies will not be imported" -ForegroundColor Red
-Write-Host 
-}
-
-
-####################################################
-
-$Answer = Read-Host "Do you want to import the MDM policies for Windows 10 (Recommended)? Type Y or N and press Enter to continue"
-if ($Answer -eq 'y' -or $Answer -eq 'yes') {
-Write-Host "Adding compliance policy for Windows 10..." -ForegroundColor Yellow
-Add-DeviceCompliancePolicybaseline -Json $BaselineWin10 
-Write-Host
-Write-Host "Adding Device configuration profiles for Windows 10..." -ForegroundColor Yellow
 #Add-DeviceConfigurationPolicy -Json $Win10BASICDR
 #Add-DeviceConfigurationPolicy -Json $Win10BASICEP
 #Add-DeviceConfigurationPolicy -Json $Win10_Boundary 
@@ -5824,24 +5742,16 @@ Add-DeviceConfigurationPolicy -Json $Win10DR
 Add-DeviceConfigurationPolicy -Json $Win10EP
 Add-DeviceConfigurationPolicy -Json $Win10_F2
 Add-DeviceConfigurationPolicy -Json $Win10_WHfB
+
 Write-Host 
-Write-Host "Adding Windows 10 Software Update Rings..." -ForegroundColor Yellow
+
+#Write-Host "Adding Windows 10 Software Update Rings..." -ForegroundColor Yellow
 
 Add-DeviceConfigurationPolicy -Json $UpdatePilot # OK
 Add-DeviceConfigurationPolicy -Json $UpdateBroad # OK
 Write-Host
 
-} else 
-
-{Write-Host "MDM policies for Windows 10 will not be imported" -ForegroundColor Red
-Write-Host
-}
-
-
 ####################################################
-
-$Answer = Read-Host "Add Office apps and the new Edge browser for Windows 10 (Recommended)? Type Y or N and press Enter to continue"
-if ($Answer -eq 'y' -or $Answer -eq 'yes') {
 
 write-host "Publishing" ($Office32 | ConvertFrom-Json).displayName -ForegroundColor Yellow
 Add-MDMApplication -JSON $Office32
@@ -5854,12 +5764,6 @@ Write-Host
 write-host "Publishing" ($ChrEdge | ConvertFrom-Json).displayName -ForegroundColor Yellow
 Add-MDMApplication -JSON $ChrEdge
 Write-Host
-} else
-
-{Write-Host "Applications for Windows 10 will not be added" -ForegroundColor Red
-Write-Host
-}
-
 
 ####################################################
 
