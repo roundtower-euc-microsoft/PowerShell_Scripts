@@ -1,19 +1,15 @@
-﻿<##################################################################################################
+<##################################################################################################
 #
 .SYNOPSIS
 This script, which configures a new tenant with Defender for Office 365, is legacy and will no longer be updated.
-
 I recommend using the Preset security policies protection templates which are available in the Security & Compliance center.
-
 By using the Preset security policies, you will stay up-to-date with Microsoft's recommended practices automatically.
-
 Connect to Exchange Online via PowerShell using MFA:
 https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell?view=exchange-ps
-
 .NOTES
     FileName:    Baseline-Defender365.ps1
-    Author:      Corey St. Pierre, Ahead, LLC
-    Created:     November 2019
+    Author:      Corey St. Pierre, Sr. Microsoft Systems Engineer
+    Created:     June 2020
 	Revised:     October 2020
     Version:     3.2
     
@@ -78,7 +74,6 @@ $PhishRuleParam = @{
 	'Enabled' = $true;
 	'Priority' = 0
 }
-
 New-AntiPhishRule @PhishRuleParam
 #>
 
@@ -183,4 +178,3 @@ write-host -foregroundcolor green "Office 365 ATP baseline configuration has com
 
 ###################################################################################################
 ## THIS CONCLUDES THE SCRIPT
-

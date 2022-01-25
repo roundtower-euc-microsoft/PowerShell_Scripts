@@ -1,30 +1,28 @@
-﻿<##################################################################################################
+<##################################################################################################
 #
 .SYNOPSIS
-This script, which configures a new tenant with Defender for Office 365, is legacy and will no longer be updated.
-
-I recommend using the Preset security policies protection templates which are available in the Security & Compliance center.
-
-By using the Preset security policies, you will stay up-to-date with Microsoft's recommended practices automatically.
+This script configures a new tenant with Office 365 Advanced Threat Protection Plan 1.
+In the future you can simply use the protection templates which will be available in the Security & Compliance center.
+Until then, use this to get a good baseline configuration in place.
 
 Connect to Exchange Online via PowerShell using MFA:
 https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell?view=exchange-ps
 
 .NOTES
-    FileName:    Baseline-Defender365.ps1
-    Author:      Corey St. Pierre, Ahead, LLC
-    Created:     November 2019
+    FileName:    Baseline-365ATP.ps1
+    Author:      Corey St. Pierre, Sr. Microsoft Systems Engineer
+    Created:     May 2020
 	Revised:     October 2020
-    Version:     3.2
+    Version:     3.1
     
 #>
 ###################################################################################################
 
 #################################################
-## CONFIGURE Defender for Office 365 (O365ATP) 
+## CONFIGURE OFFICE 365 ATP SETTINGS
 #################################################
 Write-Host
-$Answer = Read-Host "Do you want to configure Defender for 365 with the recommended baseline settings? Type Y or N and press Enter to continue"
+$Answer = Read-Host "Do you want to configure Office 365 ATP with the recommended baseline settings? Type Y or N and press Enter to continue"
 if ($Answer -eq 'y' -or $Answer -eq 'yes') {
 
 
@@ -183,4 +181,3 @@ write-host -foregroundcolor green "Office 365 ATP baseline configuration has com
 
 ###################################################################################################
 ## THIS CONCLUDES THE SCRIPT
-

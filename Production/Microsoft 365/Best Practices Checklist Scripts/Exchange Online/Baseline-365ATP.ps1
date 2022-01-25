@@ -1,4 +1,4 @@
-<##################################################################################################
+﻿<##################################################################################################
 #
 .SYNOPSIS
 This script configures a new tenant with Office 365 Advanced Threat Protection Plan 1.
@@ -10,9 +10,9 @@ https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-
 
 .NOTES
     FileName:    Baseline-365ATP.ps1
-    Author:      Corey St. Pierre, Sr. Microsoft Systems Engineer
-    Created:     May 2020
-	Revised:     October 2020
+    Author:      Corey St. Pierre, Ahead, LLC
+    Created:     November 2019
+	Revised:     August 2020
     Version:     3.1
     
 #>
@@ -181,3 +181,4 @@ write-host -foregroundcolor green "Office 365 ATP baseline configuration has com
 
 ###################################################################################################
 ## THIS CONCLUDES THE SCRIPT
+

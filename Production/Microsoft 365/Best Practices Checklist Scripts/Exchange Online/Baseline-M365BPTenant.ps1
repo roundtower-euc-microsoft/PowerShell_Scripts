@@ -1,21 +1,23 @@
 ﻿<##################################################################################################
 #
 .SYNOPSIS
-This script configures a new Microsoft 365 Business tenant including:
+This script configures a new Microsoft 365 Business Premium tenant including:
 - Baseline Exchange Online settings and EOP policies
-- Baseline Office 365 ATP policies
+- Baseline Defender for Office 365 policies
 
-See Advanced-TenantConfig.ps1 for other customizations  
+This script is considered legacy and will no longer be udpated. I recommend using the Preset security policies to configure EOP and Defender for 365.
+
+For other customizations to Exchange Online, refer to Advanced-TenantConfig.ps1  
 
 Connect to Exchange Online via PowerShell using MFA:
 https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell?view=exchange-ps
 
 .NOTES
-    FileName:    Baseline-M365BTenant.ps1
+    FileName:    Baseline-M365BPTenant.ps1
     Author:      Corey St. Pierre, Ahead, LLC
     Created:     November 2019
-	Revised:     August 2020
-    Version:     3.1
+	Revised:     October 2020
+    Version:     3.2
     
 #>
 ###################################################################################################
@@ -24,8 +26,6 @@ https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-
 ## Please define these variables before running this script: 
 $MessageColor = "Green"
 $AssessmentColor = "Yellow"
-# Where the CSV export are out or other output
-$TempPath = "C:\temp\"
 ###################################################################################################
 
 
@@ -185,10 +185,10 @@ if ($RemoteDomainDefault.AutoForwardEnabled) {
         Write-Host 
         Write-Host -ForegroundColor $AssessmentColor "Exporting known mailbox forwarders and inbox rules that auto-forward"
         $DefaultDomainName = Get-AcceptedDomain | Where-Object Default -EQ True
-        Get-Mailbox -ResultSize Unlimited -Filter {(RecipientTypeDetails -ne "DiscoveryMailbox") -and ((ForwardingSmtpAddress -ne $null) -or (ForwardingAddress -ne $null))} | Select-Object Identity,ForwardingSmtpAddress,ForwardingAddress | Export-Csv $temppath+$DefaultDomainName-MailboxForwarding.csv -append
-        foreach ($a in (Get-Mailbox -ResultSize Unlimited |Select-Object PrimarySMTPAddress)) {Get-InboxRule -Mailbox $a.PrimarySMTPAddress | Where-Object{($_.ForwardTo -ne $null) -or ($_.ForwardAsAttachmentTo -ne $null) -or ($_.DeleteMessage -eq $true) -or ($_.RedirectTo -ne $null)} |Select-Object Name,Identity,ForwardTo,ForwardAsAttachmentTo, RedirectTo, DeleteMessage | Export-Csv $temppath+$DefaultDomainName-InboxRules.csv -append }
+        Get-Mailbox -ResultSize Unlimited -Filter {(RecipientTypeDetails -ne "DiscoveryMailbox") -and ((ForwardingSmtpAddress -ne $null) -or (ForwardingAddress -ne $null))} | Select Identity,ForwardingSmtpAddress,ForwardingAddress | Export-Csv c:\temp\$DefaultDomainName-MailboxForwarding.csv -append
+        foreach ($a in (Get-Mailbox -ResultSize Unlimited |select PrimarySMTPAddress)) {Get-InboxRule -Mailbox $a.PrimarySMTPAddress | ?{($_.ForwardTo -ne $null) -or ($_.ForwardAsAttachmentTo -ne $null) -or ($_.DeleteMessage -eq $true) -or ($_.RedirectTo -ne $null)} |select Name,Identity,ForwardTo,ForwardAsAttachmentTo, RedirectTo, DeleteMessage | Export-Csv c:\temp\$DefaultDomainName-InboxRules.csv -append }
         Write-Host 
-        Write-Host -ForegroundColor $AssessmentColor ("After running this script, check the CSV files under {0} for a list of mail users who may be affected by disabling the ability to auto-forward messages to external domains" -f $TempPath)
+        Write-Host -ForegroundColor $AssessmentColor "After running this script, check the CSV files under C:\temp for a list of mail users who may be affected by disabling the ability to auto-forward messages to external domains"
         } else {
         Write-Host 
         Write-Host  -ForegroundColor $MessageColor "Run the script again if you wish to export auto-forwarding mailboxes and inbox rules"

@@ -1,4 +1,4 @@
-<##################################################################################################
+﻿<##################################################################################################
 #
 .SYNOPSIS
 This script configures a new Office 365 tenant with Basline Exchange Online settings.
@@ -12,9 +12,9 @@ https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-
 
 .NOTES
     FileName:    Baseline-ExchangeOnline.ps1
-    Author:      Corey St. Pierre, Sr. Microsoft Systems Engineer
-    Created:     May 2020
-	Revised:     October 2020
+    Author:      Corey St. Pierre, Ahead, LLC
+    Created:     November 2019
+	Revised:     August 2020
     Version:     3.1
     
 #>
@@ -360,3 +360,6 @@ if ($Answer -eq 'y' -or $Answer -eq 'yes') {
 
 ###################################################################################################
 ## THIS CONCLUDES THE SCRIPT
+
+
+

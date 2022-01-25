@@ -1,4 +1,4 @@
-﻿<##################################################################################################
+<##################################################################################################
 #
 .SYNOPSIS
 This script configures a new Microsoft 365 Business tenant including:
@@ -12,9 +12,9 @@ https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-
 
 .NOTES
     FileName:    Baseline-M365BTenant.ps1
-    Author:      Corey St. Pierre, Ahead, LLC
-    Created:     November 2019
-	Revised:     August 2020
+    Author:      Corey St. Pierre, Sr. Microsoft SYstems Engineer
+    Created:     May 2020
+	Revised:     October 2020
     Version:     3.1
     
 #>
@@ -24,8 +24,6 @@ https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-
 ## Please define these variables before running this script: 
 $MessageColor = "Green"
 $AssessmentColor = "Yellow"
-# Where the CSV export are out or other output
-$TempPath = "C:\temp\"
 ###################################################################################################
 
 
@@ -185,10 +183,10 @@ if ($RemoteDomainDefault.AutoForwardEnabled) {
         Write-Host 
         Write-Host -ForegroundColor $AssessmentColor "Exporting known mailbox forwarders and inbox rules that auto-forward"
         $DefaultDomainName = Get-AcceptedDomain | Where-Object Default -EQ True
-        Get-Mailbox -ResultSize Unlimited -Filter {(RecipientTypeDetails -ne "DiscoveryMailbox") -and ((ForwardingSmtpAddress -ne $null) -or (ForwardingAddress -ne $null))} | Select-Object Identity,ForwardingSmtpAddress,ForwardingAddress | Export-Csv $temppath+$DefaultDomainName-MailboxForwarding.csv -append
-        foreach ($a in (Get-Mailbox -ResultSize Unlimited |Select-Object PrimarySMTPAddress)) {Get-InboxRule -Mailbox $a.PrimarySMTPAddress | Where-Object{($_.ForwardTo -ne $null) -or ($_.ForwardAsAttachmentTo -ne $null) -or ($_.DeleteMessage -eq $true) -or ($_.RedirectTo -ne $null)} |Select-Object Name,Identity,ForwardTo,ForwardAsAttachmentTo, RedirectTo, DeleteMessage | Export-Csv $temppath+$DefaultDomainName-InboxRules.csv -append }
+        Get-Mailbox -ResultSize Unlimited -Filter {(RecipientTypeDetails -ne "DiscoveryMailbox") -and ((ForwardingSmtpAddress -ne $null) -or (ForwardingAddress -ne $null))} | Select Identity,ForwardingSmtpAddress,ForwardingAddress | Export-Csv c:\temp\$DefaultDomainName-MailboxForwarding.csv -append
+        foreach ($a in (Get-Mailbox -ResultSize Unlimited |select PrimarySMTPAddress)) {Get-InboxRule -Mailbox $a.PrimarySMTPAddress | ?{($_.ForwardTo -ne $null) -or ($_.ForwardAsAttachmentTo -ne $null) -or ($_.DeleteMessage -eq $true) -or ($_.RedirectTo -ne $null)} |select Name,Identity,ForwardTo,ForwardAsAttachmentTo, RedirectTo, DeleteMessage | Export-Csv c:\temp\$DefaultDomainName-InboxRules.csv -append }
         Write-Host 
-        Write-Host -ForegroundColor $AssessmentColor ("After running this script, check the CSV files under {0} for a list of mail users who may be affected by disabling the ability to auto-forward messages to external domains" -f $TempPath)
+        Write-Host -ForegroundColor $AssessmentColor "After running this script, check the CSV files under C:\temp for a list of mail users who may be affected by disabling the ability to auto-forward messages to external domains"
         } else {
         Write-Host 
         Write-Host  -ForegroundColor $MessageColor "Run the script again if you wish to export auto-forwarding mailboxes and inbox rules"

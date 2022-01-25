@@ -1,11 +1,9 @@
-﻿## Script by Corey St. Pierre, Ahead, LLC
 ## Description:
 ## This script can be used to enable the archive mailbox, and/or litigation hold
 ## Prerequisites:
 ## Exchange Online plan 2 or the Exchange Online Archiving add-on 
 ## Connect to Exchange Online via PowerShell using MFA:
 ## https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell?view=exchange-ps
-## WARNING: Script provided as-is. Author is not responsible for its use and application. Use at your own risk.
 
 $MessageColor = "cyan"
 $AssessmentColor = "magenta"
