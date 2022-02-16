@@ -1,0 +1,470 @@
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<title>Release Notes</title>
+<style>
+body {
+	margin: 2em;
+	background-color: #ffffff;
+	color: #000000;
+	font-size: 0.8em;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	}
+h1 {
+	font-weight: bold;
+	font-size: 140%;
+	color: #003399;
+	letter-spacing: 0.03em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	}
+h2 {
+	font-weight: bold;
+	font-size: 120%;
+	color: #003399;
+	letter-spacing: 0.03em;
+	margin-top: 0.7em;
+	margin-bottom: 0.5em;
+	}
+h3 {
+	font-weight: bold;
+	font-size: 100%;
+	color: #003399;
+	letter-spacing: 0.03em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	}
+h4 {
+	font-weight: bold;
+	font-size: 100%;
+	font-style: italic;
+	color: #003399;
+	letter-spacing: 0.03em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	}
+p  {
+	margin-top: 0.2em;
+	margin-bottom: 0.3em;
+	}
+p.product  {
+	font-weight: bold;
+	font-size: 160%;
+	color: #003399;
+	letter-spacing: 0.03em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	}
+p.version  {
+	font-weight: bold;
+	font-size: 110%;
+	color: #003399;
+	letter-spacing: 0.03em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	}
+p.title {
+	font-weight: bold;
+	font-size: 140%;
+	margin-top: 1em;
+	margin-bottom: 0.2em;
+	}
+p.date  {
+	margin-top: 0;
+	margin-bottom: 1em;
+	}
+p.writernote {
+	color: #ff0000;
+	}
+p.syntax {
+	font-size: 1.2em;
+	font-family: "Courier New", Courier, monospace;
+	}
+p.contents {
+	margin-left: 1em;
+	}
+p.nav {
+	font-size: 90%;
+	margin-bottom: 0.7em;
+	}
+span.writernote {
+	color: #ff0000;
+	}
+span.syntax {
+	font-size: 1.2em;
+	font-family: "Courier New", Courier, monospace;
+	}
+ul {
+	margin-top: 0.7em;
+	margin-bottom: 0.7em;
+	}
+ul ul {
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	margin-left: 1.2em;
+	}
+ul ol {
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	margin-left: 1.2em;
+	}
+ol {
+	margin-top: 0.7em;
+	margin-bottom: 0.7em;
+	}
+ol ol {
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	margin-left: 1.2em;
+	list-style: lower-roman;
+	}
+ol ul {
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	margin-left: 1.2em;
+	}
+li           { margin-bottom: 2pt }
+ol.writernote {
+	color: #ff0000;
+	margin-top: 0.7em;
+	margin-bottom: 0.7em;
+	}
+ul.writernote {
+	color: #ff0000;
+	margin-top: 0.7em;
+	margin-bottom: 0.7em;
+	}
+table {
+	width: 75%;
+	font-size: 85%;
+	margin-top: 0.7em;
+	margin-bottom: 1em;
+	}
+td {
+	vertical-align: top;
+	background-color: #f4f4f4; 
+	border-style:none; 
+	padding-right: 0.7em; 
+	padding-left: 0.7em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	}
+td.address {
+	background-color: #ffffff; 
+	border-style:none; 
+	padding-right: 0.7em; 
+	padding-left: 0.7em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	}
+hr {
+	height: 1px;
+	color: #aaaaaa;
+	}
+table.whs45 { float:alignleft; width:100%; border-left-color:#999999; border-left-width:1px; border-left-style:Solid; border-top-color:#999999; border-top-width:1px; border-top-style:Solid; border-right-color:#999999; border-right-width:1px; border-right-style:Solid; border-bottom-color:#999999; border-bottom-width:1px; border-bottom-style:Solid; border-spacing:1px; }
+col.whs46 { width:17.464%; }
+col.whs47 { width:67.115%; }
+col.whs48 { width:15.416%; }
+tr.whs49 { height:55px; }
+td.whs50 { width:17.464%; padding-right:10px; padding-left:10px; background-color:cccccc; border-left-style:none; border-top-style:none; border-right-style:none; border-bottom-style:none; }
+td.whs51 { width:67.115%; padding-right:10px; padding-left:10px; background-color:cccccc; border-left-style:none; border-top-style:none; border-right-style:none; border-bottom-style:none; }
+td.whs52 { width:15.416%; padding-right:10px; padding-left:10px; background-color:cccccc; border-left-style:none; border-top-style:none; border-right-style:none; border-bottom-style:none; }
+tr.whs53 { height:23px; }
+td.whs54 { width:17.464%; padding-right:10px; padding-left:10px; background-color:#f0f0f0; }
+td.whs55 { width:67.115%; padding-right:10px; padding-left:10px; background-color:#f0f0f0; }
+td.whs56 { width:15.416%; padding-right:10px; padding-left:10px; background-color:#f0f0f0; }
+tr.whs57 { height:28px; }
+tr.whs58 { height:27px; }
+tr.whs59 { height:39px; }
+tr.whs60 { height:77px; }
+tr.whs61 { height:42px; }
+div.Section1
+	{page:Section1;}
+</style>
+</head>
+
+<body>
+<p class="product">Quest<sup>&reg;</sup> One ActiveRoles<sup>&reg;</sup></p>
+<p class="product"><sup>Management Shell <i>for Active Directory</i></sup></p>
+<p class="version">Version 1.6.0</p>
+<p class="title">Release Notes</p>
+<p class="date">September, 2012</p>
+
+<hr>
+ 
+<h1>Contents</h1>
+
+	<p class="contents"><a href="#Welcome">Welcome to ActiveRoles Management 
+	Shell</a></p>
+	<p class="contents"><a href="#WhatsNew">New in This Release</a></p>
+	<p class="contents"><a href="#UpgradeAndCompatibility">Upgrade and Compatibility</a></p>
+	<p class="contents"><a href="#SystemRequirements">System Requirements</a></p>
+	<p class="contents"><a href="#GlobalOperations">Global Operations</a></p>
+	<p class="contents"><a href="#GettingStarted">Getting Started</a></p>
+	<p class="contents"><a href="#ForMoreInformation">For More Information</a></p>
+	<p>&nbsp;</p>
+
+<hr>
+
+<h1><a name="Welcome">Welcome to ActiveRoles Management Shell</a> </h1>
+
+<p>Quest<sup>®</sup> One ActiveRoles<sup>®</sup> Management Shell <i>for Active 
+Directory </i>is an Active Directory-specific automation and scripting shell 
+that provides a command-line management interface for administering directory 
+data either via Quest One ActiveRoles or by directly accessing Active Directory 
+domain controllers. ActiveRoles Management Shell is built on Microsoft Windows 
+PowerShell technology.</p>
+<p>&nbsp;</p>
+
+<p class="nav"><a href="#">Back to Top</a></p>
+
+<hr>
+
+<h1><a name="WhatsNew">New in This Release</a></h1>
+
+<p>ActiveRoles Management Shell 1.6.0 adds support for Quest One ActiveRole 
+6.8.0. You can now use ActiveRoles Management Shell in conjunction with the 
+latest ActiveRoles version - 6.8.0.</p>
+<p>For further information, see the What's New section in the <i>ActiveRoles 
+Management Shell 1.6 Administration Guide</i>.</p>
+<p>&nbsp;</p>
+	
+	<p class="nav"><a href="#">Back to Top</a></p><hr>
+
+
+<h1><a name="UpgradeAndCompatibility">Upgrade and Compatibility</a></h1>
+
+	<p>To upgrade an earlier version of ActiveRoles Management Shell, run the 
+	Setup program for installing ActiveRoles Management Shell 1.6. The Setup 
+	program removes the earlier version of Management Shell and install version 
+	1.6.</p>
+<p>Version 1.6 of ActiveRoles Management Shell is compatible with Quest One 
+ActiveRoles of version 6.8 only. This has the following implications:</p>
+<ul>
+	<li>Version 1.6 of ActiveRoles Management Shell cannot be installed on a 
+	computer that hosts ActiveRoles components of version other than 6.8. For 
+	example, if version 6.7 of the Administration Service, MMC Interface or Web 
+	Interface is installed on a computer, you receive an error when attempting 
+	to install version 1.6 of ActiveRoles Management Shell on that computer. The 
+	error message informs you of a conflict with the software that exists on the 
+	computer, and advises you to install ActiveRoles Management Shell on a 
+	different computer.</li>
+	<li>The ActiveRoles Management Shell cmdlets of version 1.6 cannot connect 
+	to the ActiveRoles Administration Service of version other than 6.8. For 
+	example, if you use the Proxy connection parameter in conjunction with the 
+	Service parameter that specifies a computer running the ActiveRoles 
+	Administration Service of version 6.7, you receive an error. The error 
+	message informs you that the connection cannot be established because of 
+	version incompatibility.</li>
+</ul>
+<p>When upgrading Quest One ActiveRoles to version 6.8, be aware that version 
+6.8 of the ActiveRoles Administration Service requires ActiveRoles Management 
+Shell of version 1.6. The Administration Service Setup program installs version 
+1.6 of ActiveRoles Management Shell during the upgrade process so that the 
+resulting installation meets the version compatibility requirements.</p>
+<p>&nbsp;</p>
+ 
+<p class="nav"><a href="#">Back to Top</a></p><hr>
+
+<h1><a name="SystemRequirements">System Requirements</a></h1>
+
+<p>Before installing ActiveRoles Management Shell, ensure your system meets the following minimum hardware and software requirements:</p>
+<table id="table2">
+	<tr>
+		<td valign="top" width="209" style="border-style: none; padding-left: 0.7em; padding-right: 0.7em; padding-top: 0.5em; padding-bottom: 0.5em; background-color: #f4f4f4"><b>Platform</b></td>
+		<td valign="top" style="border-style: none; padding-left: 0.7em; padding-right: 0.7em; padding-top: 0.5em; padding-bottom: 0.5em; background-color: #f4f4f4">1 GHz or higher Intel Pentium-compatible CPU.</td>
+	</tr>
+	<tr>
+		<td valign="top" width="209" style="border-style: none; padding-left: 0.7em; padding-right: 0.7em; padding-top: 0.5em; padding-bottom: 0.5em; background-color: #f4f4f4"><b>Memory</b></td>
+		<td valign="top" style="border-style: none; padding-left: 0.7em; padding-right: 0.7em; padding-top: 0.5em; padding-bottom: 0.5em; background-color: #f4f4f4">1 GB or more recommended.</td>
+	</tr>
+	<tr>
+		<td valign="top" width="209" style="border-style: none; padding-left: 0.7em; padding-right: 0.7em; padding-top: 0.5em; padding-bottom: 0.5em; background-color: #f4f4f4"><b>Hard Disk Space</b> </td>
+		<td valign="top" style="border-style: none; padding-left: 0.7em; padding-right: 0.7em; padding-top: 0.5em; padding-bottom: 0.5em; background-color: #f4f4f4">About 100 MB of free disk space.</td>
+	</tr>
+	<tr>
+		<td valign="top" width="209" style="border-style: none; padding-left: 0.7em; padding-right: 0.7em; padding-top: 0.5em; padding-bottom: 0.5em; background-color: #f4f4f4"><b>Operating System</b></td>
+		<td valign="top" style="border-style: none; padding-left: 0.7em; padding-right: 0.7em; padding-top: 0.5em; padding-bottom: 0.5em; background-color: #f4f4f4">
+				<ul>
+					<li>Microsoft Windows Server 2003, 32-bit (x86) or 64-bit 
+					(x64), Service Pack 2 or later</li>
+					<li>Microsoft Windows Server 2003 R2, 32-bit (x86) or 64-bit 
+					(x64), with or without any Service Pack</li>
+					<li>Microsoft Windows XP, 32-bit (x86) or 64-bit (x64), 
+					Service Pack 3</li>
+					<li>Microsoft Windows Server 2008, Standard or Enterprise 
+					edition, 32-bit (x86) or 64-bit (x64), Service Pack 2 or 
+					later</li>
+					<li>Microsoft Windows Vista, Ultimate, Business or 
+					Enterprise edition, 32-bit (x86) or 64-bit (x64), Service Pack 
+					2 or later</li>
+					<li>Microsoft Windows Server 2008 R2, Standard or Enterprise 
+					edition, with or without any Service Pack</li>
+					<li>Microsoft Windows 7, Ultimate, Professional or 
+					Enterprise edition, 32-bit (x86) or 64-bit (x64), with or 
+					without any Service Pack</li>
+					<li>Microsoft Windows Server 2012, Standard or Datacenter 
+					edition, with or without any Service Pack</li>
+					<li>Microsoft Windows 8, Professional or Enterprise edition, 
+					32-bit (x86) or 64-bit (x64), with or without any Service 
+					Pack</li>
+				</ul>
+			</td>
+	</tr>
+	<tr>
+		<td valign="top" width="209" style="border-style: none; padding-left: 0.7em; padding-right: 0.7em; padding-top: 0.5em; padding-bottom: 0.5em; background-color: #f4f4f4"><b>Microsoft .NET Framework</b></td>
+		<td valign="top" style="border-style: none; padding-left: 0.7em; padding-right: 0.7em; padding-top: 0.5em; padding-bottom: 0.5em; background-color: #f4f4f4">Microsoft .NET Framework 
+		3.5 SP1. </td>
+	</tr>
+	<tr>
+		<td valign="top" width="209" style="border-style: none; padding-left: 0.7em; padding-right: 0.7em; padding-top: 0.5em; padding-bottom: 0.5em; background-color: #f4f4f4"><b>Microsoft Windows PowerShell</b></td>
+		<td valign="top" style="border-style: none; padding-left: 0.7em; padding-right: 0.7em; padding-top: 0.5em; padding-bottom: 0.5em; background-color: #f4f4f4">Windows PowerShell 2.0 
+		or later.</td>
+	</tr>
+	</table>
+   
+<p>&nbsp;</p><p class="nav"><a href="#">Back to Top</a></p><hr>
+
+<h1><a name="GlobalOperations">Global Operations</a></h1>
+
+<p>This section contains information about installing and operating this product 
+in non-English configurations, such as those needed by customers outside of 
+North America. This section does not replace the materials about supported 
+platforms and configurations found elsewhere in the product documentation.</p>
+<p>This release is Unicode-enabled and supports any character set. In this 
+release, all product components should be configured to use the same or 
+compatible character encodings and should be installed to use the same locale 
+and regional options. This release is targeted to support operations in the 
+following regions: North America, Western Europe and Latin America, Central and 
+Eastern Europe, Far-East Asia, Japan.</p>
+<p>&nbsp;</p><p class="nav"><a href="#">Back to Top</a></p><hr>
+
+<h1><a name="GettingStarted">Getting Started</a></h1>
+
+<h2>Contents of the Release Package</h2> 
+
+	<p>The Quest One ActiveRoles Management Shell release package contains the following
+  product items:</p>
+   <ul>
+     <li>Quest One ActiveRoles Management Shell 1.6.0</li>
+     <li>Quest One ActiveRoles Management Shell documentation</li>
+   </ul> 
+	<h2>Installation Instructions</h2>
+	<p>Ensure that the computer on which you are going to install Management 
+	Shell meets the hardware and software requirements listed earlier in this 
+	document. Then, run the Setup program included in the release package and 
+	follow the instructions in the Setup wizard.</p>
+<p>For further information about getting started with Management Shell, see the 
+&quot;Installing and Opening ActiveRoles Management Shell&quot; section in the <i>
+ActiveRoles Management Shell 1.6 Administration Guide</i>.</p>
+
+<p>&nbsp;</p><p class="nav"><a href="#">Back to Top</a></p><hr>
+
+<h1><a name="ForMoreInformation">For More Information</a></h1>
+
+<p><br>
+Get the latest product information, find helpful resources, test the product 
+betas, and join a discussion with the ActiveRoles Quest team 
+	and other community members. Join the ActiveRoles community at
+	<a href="http://communities.quest.com/community/activeroles">
+	http://communities.quest.com/community/activeroles</a>.<br>
+&nbsp;</p>
+
+<h2>Contacting Quest Software</h2>
+
+<table>
+	<tr>
+		<td class="address" align="left" valign="top" width="100em"><b>Email</b></td>
+		<td class="address"><A href="mailto:info@quest.com"><b>info@quest.com</b></A>
+	</tr>
+	<tr>
+		<td class="address"  align="left" valign="top" width="100em"><b>Mail</b></td>
+		<td class="address">Quest Software, Inc.<br>World Headquarters<br>5 Polaris Way<br>Aliso Viejo, CA 92656<br>USA</td>
+	</tr>
+	<tr>
+		<td class="address"  align="left" valign="top" width="100em"><b>Web</b></td>
+		<td class="address"><p><a href="http://www.quest.com/"><b>http://www.quest.com</b></a></p></td>
+	</tr>
+</table>
+ 
+<p>Refer to our Web site for regional and international office information.<br>
+&nbsp;</p>
+
+<h2>Contacting Quest Support</h2>
+
+<p>Quest Support is available to customers who have a trial version of a Quest product or who have purchased a 
+Quest product and have a valid maintenance contract. Quest Support provides 
+unlimited 24x7 access to our Support Portal at 
+    <a href="http://www.quest.com/support">www.quest.com/support</a>.</p>
+<p>From our Support Portal, you can do the following:</p>
+<ul>
+	<li>Retrieve thousands of solutions from our Knowledgebase</li>
+	<li>Download the latest releases and service packs</li>
+	<li>Create, update and review Support cases</li>
+</ul>
+<p>View the <em>Global Support Guide </em>for a detailed explanation of support programs, online services, contact information, 
+policies and procedures.<br>The guide is available at <a href="http://www.quest.com/support">
+    www.quest.com/support</a>.</p>
+<p>&nbsp;</p>
+<p class="nav"><a href="#">Back to Top</a></p>
+<p>&nbsp;</p><hr>
+
+<p>&nbsp;</p>
+<p>© 2012 Quest Software, Inc.</p>
+<p>ALL RIGHTS RESERVED.</p>
+<p>&nbsp;</p>
+
+<p>This document contains proprietary information protected by copyright. The software described in this 
+document is furnished under a software license or nondisclosure agreement. This software may be used or copied only in accordance with the terms of the applicable agreement. No part of this guide may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopying and recording for any purpose other than the purchaser&#8217;s personal use without the written permission of Quest Software, Inc.</p>
+<p>&nbsp;</p>
+    <p>The information in this document is provided in connection with Quest products. No license, express or implied, by estoppel or otherwise, to any intellectual property right is granted by this document or in connection with the sale of Quest products.
+<b>EXCEPT AS SET FORTH IN QUEST'S TERMS AND CONDITIONS AS SPECIFIED IN THE LICENSE AGREEMENT FOR THIS PRODUCT, QUEST ASSUMES NO LIABILITY WHATSOEVER AND DISCLAIMS ANY EXPRESS, IMPLIED OR STATUTORY WARRANTY RELATING TO ITS PRODUCTS INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. IN NO EVENT SHALL QUEST BE LIABLE FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE, SPECIAL OR INCIDENTAL DAMAGES (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF PROFITS, BUSINESS INTERRUPTION OR LOSS OF INFORMATION) ARISING OUT OF THE USE OR INABILITY TO USE THIS DOCUMENT, EVEN IF QUEST HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</b>
+Quest makes no representations or warranties with respect to the accuracy or completeness of the contents of this document and reserves the right to make changes to specifications and product descriptions at any time without notice. Quest does not make any commitment to update the information contained in this document.
+</p>
+<p>&nbsp;</p>
+
+<p>If you have any questions regarding your potential use of this material, 
+contact:</p>
+
+<table border="0" cellpadding="2" cellspacing="0" id="table1">
+<tr><td  style="background-color:#ffffff;font-size:120%;padding-left:2em;">
+Quest Software World Headquarters
+<br>LEGAL Dept
+<br>5 Polaris Way
+<br>Aliso Viejo, CA 92656
+<br>Email:&nbsp;<a href="mailto:legal@quest.com">legal@quest.com</a>
+</td></tr>
+</table>
+
+<p>Refer to our Web Site <a href="http://www.quest.com">www.quest.com</a> for regional and international office information.</p>
+<p>&nbsp;</p>
+<h2>Trademarks</h2>
+
+<p>Quest, Quest Software, the Quest Software logo, and ActiveRoles are 
+	trademarks and registered trademarks of Quest Software, Inc. in the United 
+	States of America and other countries. For a complete list of Quest 
+	Software&#8217;s trademarks, see
+	<a href="http://www.quest.com/legal/trademark-information.aspx">
+	http://www.quest.com/legal/trademark-information.aspx</a>. Other trademarks 
+	and registered trademarks are property of their respective owners.<br>
+&nbsp;</p>
+<h2>Third Party Contributions</h2>
+<p>This product contains some third party components (listed below). Copies of 
+their licenses may be found at
+<a href="http://www.quest.com/legal/third-party-licenses.aspx">
+http://www.quest.com/legal/third-party-licenses.aspx</a>. Source code for 
+    components marked with an asterisk (*) is available at
+<a href="http://rc.quest.com">http://rc.quest.com</a>.</p>
+<ul>
+	<li>.NET logging library 1.0: BSD 4.4 license</li>
+</ul>
+
+<p>&nbsp;</p>
+<p class="nav"><a href="#">Back to Top</a></p>
+
+<p>&nbsp;</p>
+
+</body>
+</html>
