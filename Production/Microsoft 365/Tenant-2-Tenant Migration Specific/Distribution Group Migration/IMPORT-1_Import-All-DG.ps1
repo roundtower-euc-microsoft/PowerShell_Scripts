@@ -17,13 +17,13 @@
         {
         if ($ManagedBy)
             {
-            New-DistributionGroup -Type security -Name $Name -Alias $Alias -DisplayName $DisplayName -PrimarySmtpAddress $smtp -MemberJoinRestriction $join -MemberDepartRestriction $depart -ManagedBy $ManagedBy -ModeratedBy $ModeratedBy -OrganizationalUnit "OU=Agro,OU=Distribution Groups,OU=Groups,DC=AMERICOLD,DC=COM"
+            New-DistributionGroup -Type security -Name $Name -Alias $Alias -DisplayName $DisplayName -PrimarySmtpAddress $smtp -MemberJoinRestriction $join -MemberDepartRestriction $depart -ManagedBy $ManagedBy -ModeratedBy $ModeratedBy
             Start-Sleep -s 10
             Set-DistributionGroup -Identity $alias -RequireSenderAuthenticationEnabled $RequireSenderAuthenticationEnabled
             }
             Else
             {
-            New-DistributionGroup -Type security -Name $Name -Alias $Alias -DisplayName $DisplayName -PrimarySmtpAddress $smtp -MemberJoinRestriction $join -MemberDepartRestriction $depart -ModeratedBy -OrganizationalUnit "OU=Agro,OU=Distribution Groups,OU=Groups,DC=AMERICOLD,DC=COM"
+            New-DistributionGroup -Type security -Name $Name -Alias $Alias -DisplayName $DisplayName -PrimarySmtpAddress $smtp -MemberJoinRestriction $join -MemberDepartRestriction $depart -ModeratedBy $ModeratedBy
             Start-Sleep -s 10
             Set-DistributionGroup -Identity $alias -RequireSenderAuthenticationEnabled $RequireSenderAuthenticationEnabled
             }
@@ -33,13 +33,13 @@
         {
         if ($ManagedBy)
             {
-            New-DistributionGroup -Name $Name -Alias $Alias -DisplayName $DisplayName -PrimarySmtpAddress $smtp -MemberJoinRestriction $join -MemberDepartRestriction $depart -ManagedBy $ManagedBy -ModeratedBy $ModeratedBy -OrganizationalUnit "OU=Agro,OU=Distribution Groups,OU=Groups,DC=AMERICOLD,DC=COM"
+            New-DistributionGroup -Name $Name -Alias $Alias -DisplayName $DisplayName -PrimarySmtpAddress $smtp -MemberJoinRestriction $join -MemberDepartRestriction $depart -ManagedBy $ManagedBy -ModeratedBy $ModeratedBy
             Start-Sleep -s 10
             Set-DistributionGroup -Identity $alias -RequireSenderAuthenticationEnabled $RequireSenderAuthenticationEnabled
             }
             Else
             {
-            New-DistributionGroup -Name $Name -Alias $Alias -DisplayName $DisplayName -PrimarySmtpAddress $smtp -MemberJoinRestriction $join -MemberDepartRestriction $depart -OrganizationalUnit "OU=Agro,OU=Distribution Groups,OU=Groups,DC=AMERICOLD,DC=COM"
+            New-DistributionGroup -Name $Name -Alias $Alias -DisplayName $DisplayName -PrimarySmtpAddress $smtp -MemberJoinRestriction $join -MemberDepartRestriction $depart
             Start-Sleep -s 10
             Set-DistributionGroup -Identity $alias -RequireSenderAuthenticationEnabled $RequireSenderAuthenticationEnabled
             }
