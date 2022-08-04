@@ -137,3 +137,7 @@ $groups = Get-DistributionGroup -ResultSize Unlimited
 
 ### Export 1 export all distribution groups and a few settings ###
 $groups | Select-Object RecipientTypeDetails,Name,Alias,DisplayName,PrimarySmtpAddress,@{name="SMTP Domain";expression={$_.PrimarySmtpAddress.Domain}},MemberJoinRestriction,MemberDepartRestriction,RequireSenderAuthenticationEnabled,@{label="ManagedBy";expression={[string]($_.managedby | foreach {$_.tostring().split("/")[-1]})}},@{name=”AcceptMessagesOnlyFrom”;expression={$_.AcceptMessagesOnlyFrom.Name -join “;”}},@{name=”AcceptMessagesOnlyFromDLMembers”;expression={$_.AcceptMessagesOnlyFromDLMembers.Name -join “;”}},@{name=”AcceptMessagesOnlyFromSendersOrMembers”;expression={$_.AcceptMessagesOnlyFromSendersOrMembers.Name -join “;”}},@{name=”ModeratedBy”;expression={$_.ModeratedBy.Name -join “;”}},@{name=”BypassModerationFromSendersOrMembers”;expression={$_.BypassModerationFromSendersOrMembers.Name -join “;”}},@{Name="GrantSendOnBehalfTo";Expression={$_.GrantSendOnBehalfTo.Name -join “;”}},ModerationEnabled,SendModerationNotifications,@{Name="EmailAddresses";Expression={$_.EmailAddresses -join “;”}} | Export-Csv $logpath\distributiongroups.csv -NoTypeInformation
+
+Write-Host -ForegroundColor Green -BackgroundColor Black "Exchange Information has been gathered, please send this back to Ahead for processing"
+Start-Sleep 3
+ii C:\ExchangeReports
