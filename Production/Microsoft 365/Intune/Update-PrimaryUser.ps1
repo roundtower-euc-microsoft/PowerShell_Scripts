@@ -429,7 +429,7 @@ if($global:authToken){
         # Defining User Principal Name if not present
 
         if($User -eq $null -or $User -eq ""){
-            $User = "intune-scriptupdate@ensemblehp.com"
+            $User = "<UPN OF RUNNING ACCOUNT GOES HERE>"
             Write-Host
         }
 
