@@ -39,9 +39,9 @@ param
     $User
 )
 
-$userUpn = "intune-scriptupdate@ensemblehp.com"
+$userUpn = "<UPN OF RUNNING ACCOUNT GOES HERE>"
 
-$tenant = "7cc41e2c-db4e-4829-a74d-452c50dd42b4"
+$tenant = "<TENANT ID GOES HERE>"
 
 Write-Host "Checking for AzureAD module..."
 
@@ -160,7 +160,7 @@ $authority = "https://login.microsoftonline.com/$Tenant"
 #Connect to MSGraph for Intune
 
 # Replace with your service account
-$adminUPN = "intune-scriptupdate@ensemblehp.com"
+$adminUPN = "<UPN OF RUNNING ACCOUNT GOES HERE>"
 # Replace with path for your secure crendentials .txt file
 $adminPwd = Get-Content "C:\Scripts\Config\MSGraph.txt" | ConvertTo-SecureString
 $creds = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList ($adminUPN, $adminPwd)
@@ -442,7 +442,7 @@ if($global:authToken){
 else {
 
     if($User -eq $null -or $User -eq "") {
-        $User = "intune-scriptupdate@ensemblehp.com"
+        $User = "<UPN OF RUNNING ACCOUNT GOES HERE>"
         Write-Host
     }
 
