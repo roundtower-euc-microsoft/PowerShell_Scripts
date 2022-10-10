@@ -13,7 +13,7 @@
       This will import the "C:\Users.csv" file and check the users on the file to verify their existing forwarding status. The CSV file must contain the UserPrincipalName and ForwardingAddress fields
     .\Bulk-Forwarding.ps1 -csv C:\users.csv -SetForwarding
       Imports this list of users and configures their accounts to forward to the forwarding addresses provided.
-    .\Bulk-Forwarding.ps1 -csv C:\users.csv
+    .\Bulk-Forwarding.ps1 -csv C:\users.csv -RemoveForwarding
       Imports this list of users and removes the forwarding address from their accounts.
 #>
 
